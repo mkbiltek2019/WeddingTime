@@ -1,0 +1,98 @@
+﻿@model AIT.WebUIComponent.Models.Guests.PersonModel
+
+<div class="row list-item-row" pid="@Model.Id">
+    <div class="col-xs-10 col-sm-6 col-md-9 col-lg-6">
+        <span class="list-item-checkbox" title="Zaznacz osobę">
+            <label class="btn-rounded btn-turquoise nohover btn-checkbox">
+                <input type="checkbox">
+                <span class="icon icon-lg icon-person"></span>
+            </label>
+        </span>
+        <span class="checkbox-desc list-value">
+            @Model.Name @Model.Surname
+        </span>
+    </div>
+    <div class="hidden-xs hidden-md col-sm-3">
+        <span class="list-value">
+            @Model.Phone
+        </span>
+    </div>
+    <div class="col-xs-2 col-sm-3">
+        <div class="pull-right">
+            <div class="hidden-xs person-action">
+                <div class="person-status @Model.StatusValue" title="Status osoby"></div>
+            </div>
+            <div class="hidden-xs person-action">
+                @if (Model.IsInnerGroupMember)
+                {
+                    <button class="btn-rounded btn-turquoise btn-unchain" title="Odłącz osobę">
+                        <span class="icon icon-lg icon-unchain"></span>
+                    </button>
+                }
+                else
+                {
+                    <div class="btn-rounded btn-turquoise btn-chain btn-chain-@Model.GroupId" title="Powiąż z inną osobą lub grupą osób">
+                        <span class="icon icon-lg icon-chain"></span>
+                    </div>
+                }
+            </div>
+            <div class="person-action">
+                <button class="btn-rounded btn-turquoise nohover btn-person-details" type="button" title="Pokaż szczegóły">
+                    <span class="icon icon-lg icon-expand"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 person-item-details" id="person-details-@Model.Id">
+        <table class="table">
+            <tr>
+                <td colspan="2">@Html.DisplayFor(x => x.GenreText)</td>
+            </tr>
+            <tr>
+                <td class="narrow-column">@Html.LabelFor(x => x.Status)</td>
+                <td>@Html.DisplayFor(x => x.StatusText)</td>
+            </tr>
+            @if (Model.IsEmailDefined)
+            {
+                <tr>
+                    <td>@Html.LabelFor(x => x.Email)</td>
+                    <td>@Html.DisplayFor(x => x.Email)</td>
+                </tr>
+            }
+            @if (Model.IsAddressDefined)
+            {
+                <tr>
+                    <td>@Html.LabelFor(x => x.Address)</td>
+                    <td>@Html.DisplayFor(x => x.Address)</td>
+                </tr>
+            }
+            @if (Model.IsPhoneDefined)
+            {
+                <tr class="visible-xs visible-md">
+                    <td>@Html.LabelFor(x => x.Phone)</td>
+                    <td>@Html.DisplayFor(x => x.Phone)</td>
+                </tr>
+            }
+            <tr class="visible-xs">
+                <td colspan="2">
+                    <div class="text-center inner-actions">
+                        @if (Model.IsInnerGroupMember)
+                        {
+                            <button class="btn-rounded btn-turquoise btn-unchain" title="Odłącz osobę">
+                                <span class="icon icon-lg icon-unchain"></span>
+                            </button>
+                        }
+                        else
+                        {
+                            <div class="inline-block">
+                                <div class="btn-rounded btn-turquoise btn-chain btn-chain-@Model.GroupId" title="Powiąż z inną osobą lub grupą osób">
+                                    <span class="icon icon-lg icon-chain"></span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

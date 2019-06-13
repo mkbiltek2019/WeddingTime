@@ -1,0 +1,9 @@
+﻿<div class="chair-area chair-rect-area {{if #parent.getIndex()%2 == 0}}pull-left{{else}}pull-right{{/if}}" data-location="{{if #parent.getIndex()%2 == 0}}left{{else}}right{{/if}}">
+
+    <!-- seat btn is placed absolutly to be able to click btn even if chair is hidden -->
+    <button class="btn-ballroom btn-seat btn-seat-rect btn-seats-action" name="rect">
+        <span class="icon icon-rect {{if #parent.getIndex()%2 == 0}}icon-arrow-right-r{{else}}icon-arrow-left-r{{/if}}"></span>
+    </button>
+
+    <div sid="{{>key}}" class="chair chair-rect"></div>
+</div>

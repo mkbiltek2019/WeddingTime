@@ -1,0 +1,64 @@
+﻿@model AIT.WebUIComponent.Models.Home.ContactModel
+
+@{
+    ViewBag.Title = " - kontakt";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        KONTAKT
+    </p>
+    <hr class="separator" />
+    <div class="text-center page-desc">
+        <p>
+            Napisz swoją opinię, zgłoś problem lub zaproponuj zmianę.
+        </p>
+    </div>
+    <div class="text-center page-desc">
+        <p>
+            @ViewBag.StatusMessage
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="form-panel">
+        <div class="form-header form-header-blue">
+            <div class="form-title">
+                Wypełnij formularz kontaktowy
+            </div>
+        </div>
+        <div class="form-body form-body-blue wide">
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { id = "contactForm", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-inputs">
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-ctrl", placeholder = "Twoje imię" })
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-ctrl", placeholder = "Twój e-mail" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-ctrl", placeholder = "Tytuł" })
+                        @Html.ValidationMessageFor(m => m.Subject)
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.TextAreaFor(m => m.Body, new { @class = "form-ctrl", placeholder = "Treść", rows = 8 })
+                        @Html.ValidationMessageFor(m => m.Body)
+                    </div>
+                </div>               
+                <div class="form-body-btn">
+                    <button type="submit" class="btn-rounded btn-turquoise" title="Wyślij formularz">
+                        <span class="icon icon-lg icon-send"></span>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/enhance")
+}

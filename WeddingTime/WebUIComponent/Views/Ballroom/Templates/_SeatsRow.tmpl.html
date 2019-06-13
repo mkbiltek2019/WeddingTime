@@ -1,0 +1,15 @@
+﻿{{props #data}}
+    {{if #index%2 == 0}}
+        <div class="seats-row">
+            {{for #data tmpl="seat" /}}                                                 <!-- here is left chair -->
+    {{else}}
+            {{for #data tmpl="seat" /}}                                                 <!-- here is right chair -->
+
+            <div class="table-rect {{if #getIndex() != 1}}join-up{{/if}} {{if #get("array").data.length - 1 != #getIndex()}}join-down{{/if}}">                                                    <!-- row below represents part of table inside which we have delete row btn -->            
+                <button class="btn-ballroom btn-seats-action btn-delete-row" name="rect">
+                    <span class="icon icon-rect icon-remove"></span>
+                </button>
+            </div>
+        </div>
+    {{/if}}
+{{/props}}

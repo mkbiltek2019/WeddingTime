@@ -1,0 +1,19 @@
+﻿<div id="{{:Id}}" class="task-box">
+    <div class="task-item">
+        <div class="task-item-cell details">
+            <div class="task-title" data-bind="title" data-toggle="modal" data-target="#updateTaskModal">
+                {{:Title}}
+            </div>
+            <div class="task-reminder {{if ReminderDate == null}}hidden{{/if}}">
+                <span class="icon-ring"></span>
+                <span data-bind="reminderDate" data-bind-vs="parent">{{:ReminderDate}}</span>
+            </div>
+            <div class="task-del-action">
+                <button class="btn-rounded btn-small btn-dismiss btn-delete-task" title="Usuń zadanie">
+                    <span class="icon icon-sm icon-trash"></span>
+                </button>
+            </div>
+        </div>
+        <div class="task-item-cell handle" title="Przeciągnij zadanie"></div>
+    </div>
+</div>

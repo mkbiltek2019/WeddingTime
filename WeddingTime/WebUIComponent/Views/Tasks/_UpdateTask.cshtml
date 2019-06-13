@@ -1,0 +1,30 @@
+﻿<div class="modal fade" id="updateTaskModal" tabindex="-1" role="dialog" aria-labelledby="lblUpdateTask" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            @using (Ajax.BeginForm("UpdateTask", "Tasks", new AjaxOptions
+            {
+                OnBegin = "tasksManager.beforeTaskUpdate",
+                OnSuccess = "tasksManager.onTaskUpdated",
+                OnFailure = "tasksManager.onTaskUpdateFailure"
+            }, new { id = "updateTaskFrom" }))
+            {
+                <div class="modal-header">
+                    <button type="button" class="btn-rounded btn-small btn-dismiss right" data-dismiss="modal" aria-hidden="true">
+                        <span class="icon icon-sm icon-cancel"></span>
+                    </button>
+                    <h4 class="modal-title" id="lblUpdateTask">AKTUALIZACJA ZADANIA</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="updateTaskContent">
+                        @* content added dynamically *@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-rounded btn-turquoise disabled" title="Zapisz">
+                        <span class="icon icon-lg icon-save"></span>
+                    </button>
+                </div>               
+            }
+        </div>
+    </div>
+</div>

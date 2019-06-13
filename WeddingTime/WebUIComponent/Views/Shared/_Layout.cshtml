@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@string.Format("Zamiłowani{0}", ViewBag.Title)</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+
+    @Styles.Render("~/Content/site/css")
+
+</head>
+<body>    
+    <div class="header">
+        <div class="container">
+            <div class="relative-position">
+                <div class="logo-img"></div>
+            </div>
+            <section>
+                <nav class="navbar">
+                    <div class="navbar-header">
+                        <button type="button" id="btnNavMenu" class="navbar-toggle btn-nav" data-toggle="collapse" data-target="#navbarPageOptions">
+                            <span class="sr-only">Toggle nav</span>
+                            <span class="icon-nav icon-menu icon-menu-inactive"></span>
+                        </button>
+                        <button type="button" id="btnNavLogin" class="navbar-toggle btn-nav btn-rounded btn-turquoise" data-toggle="collapse" data-target="#navbarUserOptions">
+                            <span class="sr-only">Toggle nav</span>
+                            <span class="icon icon-lg icon-user"></span>
+                        </button>
+                    </div>
+                    @{ Html.RenderPartial("_Login"); }
+                    <div class="hidden-xs menu-separator-wrapper">
+                        <hr class="menu-separator" />
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbarPageOptions">
+                        @Html.MvcSiteMap().Menu()
+                    </div>
+                </nav>
+            </section>
+        </div>       
+    </div>
+
+    @RenderBody()
+
+    <div>
+        <footer class="container page-footer">
+            <div class="row">
+                <div class="hidden-xs">
+                    <hr class="footer-line" />
+                </div>
+                <div class="footer-body">
+                    <div class="footer-copy-rights pull-left">
+                        <span>&copy; @DateTime.Now.Year - Zamiłowani.pl</span>
+                    </div>
+                    <div class="footer-social-icons">
+                        <a href="https://plus.google.com/b/118188235749641783100/118188235749641783100/posts" target="_blank" class="btn-rounded btn-red btn-social">
+                            <span class="icon icon-lg icon-gp"></span>
+                        </a>
+                        <a href="#" class="btn-rounded btn-blue btn-social">
+                            <span class="icon icon-lg icon-tw"></span>
+                        </a>
+                        <a href="https://www.facebook.com/zamilowani" target="_blank" class="btn-rounded btn-navy-blue btn-social">
+                            <span class="icon icon-lg icon-fb"></span>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="fotter-additional-info">
+                    Korzystanie z serwisu oznacza akceptację @Html.ActionLink("regulaminu", "UserAgreement", "Documents") <br />
+                    @Html.ActionLink("Polityka prywatności i plików cookies", "PrivacyAndCookiesPolicy", "Documents")
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/bundles/utils")
+    @Scripts.Render("~/bundles/shared")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

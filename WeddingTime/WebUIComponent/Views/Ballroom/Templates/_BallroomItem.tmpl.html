@@ -1,0 +1,30 @@
+﻿<div id="{{:Data.Id}}" class="ballroom-item">
+    <!-- this is the main div in which we have delete, close btn, drag handle and some addition btns if needed -->
+    <div class="hidden-xs">
+        <div class="item-panel">
+            <button class="btn-ballroom btn-show-items">
+                <span class="icon icon-rect icon-unwind"></span>
+            </button>
+        </div>
+        <div class="item-panel item-panel-content">
+            <button type="button" class="btn-rounded btn-small btn-dismiss btn-hide-items">
+                <span class="icon icon-sm icon-cancel"></span>
+            </button>
+            <button class="btn-rounded btn-small btn-dismiss btn-delete-item">
+                <span class="icon icon-sm icon-trash"></span>
+            </button>
+
+            <!-- addition tmpl to load for table items -->
+            {{if PanelTmpl != null }}
+            {{for Data tmpl=PanelTmpl /}}
+            {{/if}}
+
+            <div class="pull-right drag-handle">
+                <span class="ballroom-item-handle"></span>
+            </div>
+        </div>
+    </div>
+
+    {{for Data tmpl=ItemTmpl /}}
+    
+</div>

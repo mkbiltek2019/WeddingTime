@@ -1,0 +1,53 @@
+﻿@model AIT.WebUIComponent.Models.Expenses.ExpenseItemModel
+
+@{
+    var id = Model.Id;
+}
+
+<div class="row hidden-xs edit-expense">
+    @using (Ajax.BeginForm("UpdateExpense", "Expenses", new AjaxOptions
+    {
+        OnBegin = "expensesManager.beforeExpenseUpdate(" + @id + ")",
+        OnSuccess = "expensesManager.onExpenseUpdateSuccess",
+        OnFailure = "expensesManager.onExpenseUpdateFailure(xhr, " + @id + ")",
+        OnComplete = "expensesManager.onExpenseUpdateCompleted(" + @id + ")"
+    }, new { id = "editExpenseForm-" + id }))
+    {
+        <div class="col-sm-6">
+            <div class="expense-update-area">
+                @Html.TextBoxFor(n => n.Description, new { id = id + "-Desc", @class = "expense-input" })
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="expense-update-area">
+                @Html.TextBoxFor(n => n.Quantity, new { id = id + "-Quantity", @class = "expense-input int-input calcField-" + id })
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="expense-update-area">
+                @Html.TextBoxFor(n => n.UnitPrice, new { id = id + "-UnitPrice", @class = "expense-input float-input calcField-" + id })
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="expense-update-area price">
+                @Html.TextBoxFor(n => n.Price, new { id = id + "-Price", @class = "expense-input float-input" })
+            </div>
+            <div class="expense-update-actions">
+                <button type="submit" class="btn-rounded btn-turquoise disabled" title="Zapisz">
+                    <span class="icon icon-lg icon-save"></span>
+                </button>
+                <button id="btnCancelEdit-@id" type="button" class="btn-rounded btn-dismiss" title="Anuluj">
+                    <span class="icon icon-lg icon-cancel"></span>
+                </button>
+            </div>     
+        </div>
+        @Html.Hidden("Id", id)
+    }
+
+    <script type="text/javascript">
+        $(function () {
+            expensesManager.manageEditFields(@id);
+        });
+    </script>
+</div>
+    

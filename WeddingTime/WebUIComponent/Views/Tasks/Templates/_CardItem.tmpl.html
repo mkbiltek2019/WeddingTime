@@ -1,0 +1,13 @@
+﻿<div ciid="{{:Id}}" class="card-item">
+
+    <div class="pull-left">
+        {{for ViewData tmpl=TmplName /}}
+    </div>
+    <div class="pull-right">
+        <button type="button" class="btn-rounded btn-small btn-turquoise" title="Usuń">
+            <span class="icon icon-sm icon-trash"></span>
+        </button>
+    </div>
+
+    {{for HiddenData tmpl="cardItemHidden" /}}
+</div>

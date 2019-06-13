@@ -1,0 +1,25 @@
+﻿@model AIT.WebUIComponent.Models.Undo.UndoModel
+
+<div id="undoInfo" class="info-fixed-bottom">
+    <div class="container">
+        @using (Ajax.BeginForm("Undo", "Undo", new { key = Model.Key }, null))
+        {
+            <div class="text-center">
+                <div class="undo-area">
+                    <div class="undo-desc">
+                        <span>@Model.Description</span>
+                    </div>
+                    <div class="udno-actions">
+                        <button type="submit" class="btn-rounded btn-turquoise" title="Cofnij zmianę">
+                            <span class="icon icon-lg icon-undo"></span>
+                        </button>
+                        <button type="button" class="btn-rounded btn-dismiss btn-close-undo" title="Zamknij panel">
+                            <span class="icon icon-lg icon-cancel"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

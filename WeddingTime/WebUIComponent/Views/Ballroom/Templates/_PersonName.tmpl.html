@@ -1,0 +1,10 @@
+﻿<div class="chair-person {{:Layout}}">
+    <div class="chair-name {{if Surname == null}}chair-name-middle{{/if}} truncate nowrap">
+        {{:Name}}
+    </div>
+    {{if Surname != null}}
+        <div class="chair-name truncate nowrap">
+            {{:Surname}}
+        </div>
+    {{/if}}
+</div>

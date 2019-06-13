@@ -1,0 +1,36 @@
+﻿@model IList<AIT.WebUIComponent.Models.Guests.PersonModel>
+
+@*index = 0 (always) - here is a trick. I always add one element in list, but then if it is generated asynch, I change the [0] 
+to appropriate index to be able to get all items on submit and also to have all the validation from cs file - translated well.*@
+
+@{
+    int id = Model[0].Id;
+}
+
+<div class="modal-slice" id="@id-modal-slice">
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Name, new { id = @id + "-nameTextBox", @class = "form-ctrl", placeholder = "Imię" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Surname, new { id = @id + "-surnameTextBox", @class = "form-ctrl", placeholder = "Nazwisko" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Phone, new { id = @id + "-phoneTextBox", @class = "form-ctrl", placeholder = "Telefon kontaktowy" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Email, new { id = @id + "-emailTextBox", @class = "form-ctrl", placeholder = "E-mail" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Address, new { id = @id + "-addressTextBox", @class = "form-ctrl", placeholder = "Adres" })
+    </div>
+    <div class="form-ctrl-area">        
+        @Html.DropDownListFor(model => model[0].Genre, new SelectList(Model[0].GenreCollection, "Value", "Text"), new { id = @id + "-genreList", @class = "form-ctrl" })
+    </div>
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model[0].Status)
+    </div>
+    <div class="form-ctrl-area">        
+        @Html.DropDownListFor(model => model[0].Status, new SelectList(Model[0].StatusCollection, "Value", "Text"), new { id = @id + "-statusList", @class = "form-ctrl" })
+    </div>
+    @Html.HiddenFor(model => model[0].GroupId)
+</div>

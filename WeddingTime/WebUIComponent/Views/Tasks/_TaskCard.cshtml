@@ -1,0 +1,89 @@
+﻿@model AIT.WebUIComponent.Models.Tasks.TaskCardModel
+@using AIT.TaskDomain.Model.Enums;
+
+<div class="modal fade" id="taskCardModal" tabindex="-1" role="dialog" aria-labelledby="lblAddTaskCard" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            @using (Ajax.BeginForm("UpdateCard", "Tasks", new AjaxOptions
+            {
+                OnBegin = "cardManager.beforeCardUpdate",
+                OnSuccess = "cardManager.onCardUpdated",
+                OnFailure = "cardManager.onCardUpdateFailure"
+            }, new { id = "updateCardForm" }))
+            {
+                <div class="modal-header">
+                    <button type="button" class="btn-rounded btn-small btn-dismiss right" data-dismiss="modal" aria-hidden="true">
+                        <span class="icon icon-sm icon-cancel"></span>
+                    </button>
+                    <h4 class="modal-title" id="lblAddTaskCard">KARTA DO ZADANIA</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="taskCardContent">
+                        <div class="hidden">
+                            <div class="card-title-area">
+                                <div class="form-ctrl-area">
+                                    @Html.TextBoxFor(m => m.Title, new { @class = "form-ctrl", placeholder = "Tytuł karty", id = "cardTitle" })
+                                </div>
+                            </div>
+                            <div id="cardItemInputArea">
+                                <div class="form-ctrl-area">
+                                    <input id="cardItemInput" type="text" class="form-ctrl" fl-omit />
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <div class="card-select-actions">
+                                    <button type="button" class="btn-rounded btn-small btn-turquoise btn-card-item"
+                                            data-item="@ItemType.Email"
+                                            data-title="Adres email" title="Dodaj adres e-mail">
+                                        <span class="icon icon-sm icon-mail"></span>
+                                    </button>
+                                    <button type="button" class="btn-rounded btn-small btn-turquoise btn-card-item"
+                                            data-item="@ItemType.ContactPerson"
+                                            data-title="Osoba kontaktowa" title="Dodaj osobę kontaktową">
+                                        <span class="icon icon-sm icon-contact"></span>
+                                    </button>
+                                    <button type="button" class="btn-rounded btn-small btn-turquoise btn-card-item"
+                                            data-item="@ItemType.Address"
+                                            data-title="Adres" title="Dodaj adres">
+                                        <span class="icon icon-sm icon-home"></span>
+                                    </button>
+                                    <button type="button" class="btn-rounded btn-small btn-turquoise btn-card-item"
+                                            data-item="@ItemType.Phone"
+                                            data-title="Telefon" title="Dodaj numer telefonu">
+                                        <span class="icon icon-sm icon-phone"></span>
+                                    </button>
+                                    <button type="button" class="btn-rounded btn-small btn-turquoise btn-card-item"
+                                            data-item="@ItemType.Link"
+                                            data-title="Link" title="Dodaj link">
+                                        <span class="icon icon-sm icon-link"></span>
+                                    </button>
+                                </div>
+                                <div class="card-apply-actions">
+                                    <button type="button" id="btnSaveCardItem" class="btn-rounded btn-small btn-turquoise" title="Zapisz">
+                                        <span class="icon icon-sm icon-save"></span>
+                                    </button>
+                                    <button type="button" id="btnCancelCardItem" class="btn-rounded btn-small btn-dismiss" title="Anuluj">
+                                        <span class="icon icon-sm icon-cancel"></span>
+                                    </button>
+                                </div>
+                            </div>                            
+                            <hr class="separator" />
+                            <div id="cardItems" data-fl-dynamic-area>
+                                @* added by user or filled in by ajax call if in update mode *@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-rounded btn-turquoise disabled" title="Zapisz">
+                        <span class="icon icon-lg icon-save"></span>
+                    </button>
+                </div>
+                <div>
+                    @Html.Hidden("Id")
+                    @Html.Hidden("TaskId")
+                </div>
+            }
+        </div>
+    </div>
+</div>

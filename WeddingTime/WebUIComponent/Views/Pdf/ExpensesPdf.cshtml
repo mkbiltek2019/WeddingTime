@@ -1,0 +1,58 @@
+﻿@model AIT.WebUIComponent.Models.Pdf.ExpensesModel
+
+@{
+    ViewBag.Title = "Expenses pdf";
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";
+}
+
+<table style="margin-top: 20px">
+    <thead>
+        <tr>
+            <th>
+                Tytuł/Opis
+            </th>
+            <th>
+                Ilość
+            </th>
+            <th>
+                Cena jednostkowa
+            </th>
+            <th>
+                Wartość
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expense in Model.Expenses)
+        {
+            <tr>
+                <td>
+                    @expense.Description
+                </td>
+                <td>
+                    @if (expense.Quantity != 0)
+                    {
+                        @expense.Quantity
+                    }
+                </td>
+                <td>
+                    @if (expense.UnitPrice != 0)
+                    {
+                        @expense.UnitPrice
+                    }                    
+                </td>
+                <td>
+                    @expense.Price
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="3" align="right" class="clear-border">
+                <h3>Suma:</h3>
+            </td>
+            <td class="clear-border">
+                <h3>@Model.Sum</h3>
+            </td>
+        </tr>
+    </tbody>
+</table>

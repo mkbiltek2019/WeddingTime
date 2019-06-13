@@ -1,0 +1,50 @@
+﻿@model AIT.WebUIComponent.Models.Account.ChangeEmailViewModel
+
+@{
+    ViewBag.Title = " - zmiana adresu e-mail";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        NOWY ADRES E-MAIL
+    </p>
+    <hr class="separator" />
+    <div class="text-center page-desc">
+        <p>
+            Zmiana adresu e-mail spowoduje wylogowanie z konta i zablokowanie go do czasu potwierdzenia nowego adresu.
+        </p>        
+    </div>
+</div>
+<div class="row">
+    <div class="form-panel">
+        <div class="form-header form-header-green">
+            <div class="form-title">
+                Zmień adres e-mail
+            </div>
+        </div>
+        <div class="form-body form-body-green">
+            @using (Html.BeginForm("ChangeEmail", "Manage", FormMethod.Post, new { id = "changeEmailForm", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-inputs">
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-ctrl", placeholder = "E-mail" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>  
+                    @Html.ValidationSummary(true)                  
+                </div>
+                <div class="form-body-btn">
+                    <button type="submit" class="btn-rounded btn-turquoise" title="Zapisz">
+                        <span class="icon icon-lg icon-save"></span>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/enhance")
+}
+

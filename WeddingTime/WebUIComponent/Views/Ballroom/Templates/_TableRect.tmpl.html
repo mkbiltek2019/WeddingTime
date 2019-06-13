@@ -1,0 +1,13 @@
+﻿<div class="table-rect-area">
+    <div id="item-{{:Id}}" class="table-item">
+        <!--here is the width of table-->
+        {{for TopSeat tmpl="seatUtmost" /}}
+
+        <div id="seatsCollection-{{:Id}}">
+            {{for SideSeats tmpl="seatsRow" /}}
+        </div>
+
+        {{for BottomSeat tmpl="seatUtmost" /}}
+        <!--this is the div that can be rotated and which holds data-->
+    </div>
+</div>  

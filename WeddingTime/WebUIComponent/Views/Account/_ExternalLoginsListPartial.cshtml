@@ -1,0 +1,19 @@
+﻿@model AIT.WebUIComponent.Models.Account.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+
+    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form", id = "externalLoginForm" }))
+    {
+        @Html.AntiForgeryToken()
+        foreach (AuthenticationDescription desc in loginProviders)
+        {
+            <div class="form-group">
+                <button type="submit" id="@desc.AuthenticationType" class="form-control btn-external @desc.AuthenticationType.ToLower()" name="provider" value="@desc.AuthenticationType">                    
+                    Zaloguj z konta @desc.AuthenticationType
+                </button>
+            </div>            
+        }
+    }
+}

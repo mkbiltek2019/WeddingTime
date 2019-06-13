@@ -1,0 +1,65 @@
+﻿@model AIT.WebUIComponent.Models.Guests.GroupModel
+
+<div class="group-item" gid="@Model.Id">
+    <div class="relative-position">
+        <div class="sticky-top-wrapper group-box-wrapper">
+            <div class="group-box">
+                <div class="group-box-item">
+                    <div class="group-info">
+                        <div class="group-name truncate">
+                            @Model.Name.ToUpper()
+                        </div>
+                        <div class="info-area">
+                            <div class="members-count">
+                                <span class="visible-xs visible-sm pull-left">(</span>
+                                <span class="visible-md visible-lg pull-left">Liczba gości: </span>
+                                <span class="counter" id="membersCount-@Model.Id">0</span>
+                                <span class="visible-xs visible-sm pull-right">)</span>
+                            </div>
+                            <div class="info-action">
+                                <button id="btnMembersInfo-@Model.Id" class="btn-rounded btn-small btn-turquoise nohover btn-members-info" type="button">
+                                    <span class="icon icon-sm icon-expand"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="members-info-panel" id="membersInfoPanel-@Model.Id">
+                            @{ Html.RenderPartial("_MembersInfo"); }
+                        </div>
+                    </div>
+                    <div class="group-actions">
+                        <button type="button" class="btn-rounded btn-dismiss btn-delete-group" title="Usuń grupę">
+                            <span class="icon icon-lg icon-trash"></span>
+                        </button>
+                        <button type="button" data-toggle="modal" data-target="#editGroupModal" class="btn-rounded btn-turquoise"  title="Edytuj nazwę grupy">
+                            <span class="icon icon-lg icon-edit"></span>
+                        </button>                        
+                        <button type="button" data-toggle="modal" data-target="#createPersonsModal" class="btn-rounded btn-turquoise" title="Dodaj osoby do grupy">
+                            <span class="icon icon-lg icon-add"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="members">
+            <div>
+                <div class="row">
+                    <ul id="members-@Model.Id" class="list-group group-members">
+                        @* here persons list is displayed - is added by jquery after performing ajax call *@
+                    </ul>
+                </div>
+            </div>
+
+            <div id="membersPanel-@Model.Id" class="stick-bottom-panel" title="Zamknij panel">                
+                <button type="button" data-toggle="modal" data-target="#editPersonsModal" class="btn-rounded btn-turquoise" title="Edytuj zaznaczone osoby">
+                    <span class="icon icon-lg icon-edit"></span>
+                </button>
+                <button type="button" class="btn-rounded btn-dismiss btn-delete-members" title="Usuń zaznaczone osoby">
+                    <span class="icon icon-lg icon-trash"></span>
+                </button>
+                <button type="button" class="btn-rounded btn-dismiss btn-clear-selected">
+                    <span class="icon icon-lg icon-hide"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+﻿$(function () {
+    registerManager.init();    
+});

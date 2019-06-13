@@ -1,0 +1,21 @@
+﻿@model AIT.WebUIComponent.Models.Expenses.BudgetModel
+
+@using (Ajax.BeginForm("UpdateBudget", "Expenses", new AjaxOptions
+{
+    OnBegin = "budgetInfoManager.beforeUpdate",
+    OnSuccess = "budgetInfoManager.onUpdateSuccess",
+    OnFailure = "budgetInfoManager.onUpdateFailure"
+}, new { id="updateBudgetForm" }))
+{
+    <div>
+        @Html.TextBoxFor(x => x.Value, new { @class = "expense-input edit-budget-input", id = "txtBudgetValue", value = Model.Value })
+        
+        <button type="submit" id="btnUpdateBudget" class="btn-rounded btn-turquoise disabled" title="Zapisz">
+            <span class="icon icon-lg icon-save"></span>
+        </button>
+        <button type="button" id="btnCancelBudget" class="btn-rounded btn-dismiss" title="Anuluj">
+            <span class="icon icon-lg icon-cancel"></span>
+        </button>
+    </div>
+    @Html.HiddenFor(x => x.Id)
+}

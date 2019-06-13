@@ -1,0 +1,65 @@
+﻿@model AIT.WebUIComponent.Models.Account.RegisterModel
+@{
+    ViewBag.Title = " - rejestracja";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        REJESTRACJA UŻYTKOWNIKA
+    </p>
+    <hr class="separator" />
+</div>
+<div class="row">
+    <div class="form-panel">
+        <div class="form-header form-header-blue">
+            <div class="form-title">
+                Stwórz nowe konto
+            </div>
+        </div>
+        <div class="form-body form-body-blue">
+            @using (Ajax.BeginForm("Register", "Account", null, new AjaxOptions
+            {
+                OnBegin = "registerManager.onBegin",
+                OnSuccess = "registerManager.onSuccess",
+                OnFailure = "registerManager.onFailure"
+            }, new { @id = "registerForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-inputs">
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-ctrl", placeholder = "Nazwa użytkownika" })
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-ctrl", placeholder = "E-mail" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-ctrl", placeholder = "Hasło" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                    <div class="form-ctrl-area">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-ctrl", placeholder = "Powtórz hasło" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    </div>
+                </div>
+                <div class="form-ctrl-area">
+                    <div class="form-checkbox">
+                        <input id="TermsAccepted" name="TermsAccepted" type="checkbox" value="true" />
+                        <label for="TermsAccepted">Oświadczam, że @Html.ActionLink("REGULAMIN", "UserAgreement", "Documents", null, new { @class = "color-grey", target = "_blank" }) jest mi znany.</label>
+                    </div>
+                </div>
+                <div class="form-body-btn">
+                    <button type="submit" class="btn-rounded btn-turquoise">
+                        <span class="icon icon-lg icon-register"></span>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/register")
+}

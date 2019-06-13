@@ -1,0 +1,47 @@
+﻿@model AIT.WebUIComponent.Models.Tasks.TaskModel
+
+@{ var cards = Html.Raw(Json.Encode(Model.Cards)); }
+
+<div class="row">
+    <div>
+        <div class="form-ctrl-area">
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-ctrl", placeholder = "Nazwa zadania" })
+        </div>
+        <div class="form-ctrl-area">            
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-ctrl", rows = 5, placeholder = "Opis zadania" })
+        </div>
+        <div class="form-ctrl-area">
+            @Html.DropDownListFor(model => model.State, new SelectList(Model.TaskStateCollection, "Value", "Text"), new { @class = "form-ctrl" })
+        </div>
+
+        <div class="form-ctrl-area form-task-reminder">
+            @Html.TextBoxFor(model => model.ReminderDate, new { id = "txtReminderDate", @class = "form-ctrl", @readonly = "readonly", placeholder = "Data przypomnienia" })
+            <button type="button" class="btn-rounded btn-small btn-turquoise" id="btnReminderDate" title="Ustaw przypomnienie">
+                <span class="icon icon-sm icon-calendar"></span>
+            </button>
+            <button type="button" class="btn-rounded btn-small btn-dismiss" id="btnClearReminderDate" title="Usuń przypomnienie">
+                <span class="icon icon-sm icon-trash"></span>
+            </button>
+        </div>        
+    </div>
+    <div>
+        <div class="form-ctrl-desc">
+            Karty do zadania:
+        </div>
+    </div>
+    <div id="cardsArea" class="cards-area" data-fl-dynamic-area>
+        @* items are inserted by jquery function *@
+    </div>
+    <div>
+        <button type="button" class="btn-rounded btn-small btn-turquoise" data-toggle="modal" data-task-id="@Model.Id" data-target="#taskCardModal" title="Dodaj nową kartę">
+            <span class="icon icon-sm icon-add"></span>
+        </button>
+    </div>    
+    @Html.HiddenFor(model => model.Id)
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        cardManager.renderCards(@cards);
+    })
+</script>

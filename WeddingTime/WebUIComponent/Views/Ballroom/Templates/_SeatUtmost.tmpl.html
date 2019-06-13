@@ -1,0 +1,17 @@
+﻿<!-- this additional teplate is created because it is hard to draw such table on the page -->
+<!-- what is more it accepts KeyValuePair not the whole dictinary so it is different than _Seat.tmpl -->
+
+<div class="seats-side-row">
+    <div class="chair-area chair-side-area" data-location="{{if #data.Value.Location == 0}}top{{else}}bottom{{/if}}">
+        <!--relative because we add here name which is absolute -->
+
+        <button class="btn-ballroom btn-seat btn-side-seat btn-seats-action" name="rect">
+            <span class="icon icon-rect {{if #data.Value.Location == 0}}icon-arrow-down-r{{else}}icon-arrow-up-r{{/if}}"></span>
+        </button>
+
+        <div sid="{{:#data.Key}}" class="chair">
+        </div>
+    </div>
+</div>
+
+

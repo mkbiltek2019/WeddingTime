@@ -1,0 +1,21 @@
+﻿<div class="navbar-collapse collapse" id="navbarUserOptions">
+    <ul class="nav navbar-nav navbar-right navbar-login">
+        @if (Request.IsAuthenticated)
+        {
+            
+            <li class="nav">@Html.ActionLink("ZARZĄDZAJ KONTEM", "Index", "Manage")</li>
+            <li class="nav">
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a id="btnLogOut" href="#">WYLOGUJ</a>
+                }
+            </li>
+        }
+        else
+        {
+            <li class="nav">@Html.ActionLink("REJESTRACJA", "Register", "Account")</li>
+            <li class="nav">@Html.ActionLink("LOGOWANIE", "Login", "Account", new { returnUrl = "/Home" }, null)</li>
+        }
+    </ul>
+</div>

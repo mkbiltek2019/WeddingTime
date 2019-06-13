@@ -1,0 +1,81 @@
+﻿@using AIT.WebUIComponent.Models.Account;
+@model SignInModel
+
+@{
+    ViewBag.Title = " - logowanie";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        WYBIERZ METODĘ LOGOWANIA
+    </p>
+    <hr class="separator" />
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-5">
+        <div class="form-panel login-external">
+            <div class="form-header form-header-green">
+                <div class="form-title">
+                    Użyj zewnętrznego serwisu
+                </div>
+            </div>
+            <div class="form-body form-body-green">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+        <div class="text-center">
+            <div class="login-or">LUB</div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-5">
+        <div class="form-panel login-internal">
+            <div>
+                <div class="form-header form-header-blue">
+                    <div class="form-title">
+                        Użyj swojego konta
+                    </div>
+                </div>
+                <div class="form-body form-body-blue">
+                    @using (Ajax.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions
+                    {
+                        OnBegin = "loginManager.onBegin",
+                        OnSuccess = "loginManager.onSuccess",
+                        OnFailure = "loginManager.onFailure"
+                    }, new { autocomplete = "off", @id = "loginForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-inputs">
+                            <div class="form-ctrl-area">
+                                @Html.TextBoxFor(m => m.Username, new { @class = "form-ctrl", placeholder = "Nazwa użytkownika" })
+                            </div>
+                            <div class="form-ctrl-area">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-ctrl", placeholder = "Hasło" })
+                            </div>
+                        </div>
+                        <div class="form-checkbox">
+                            <input id="RememberMe" name="RememberMe" type="checkbox" value="true" />
+                            <label for="RememberMe">Zapamiętaj mnie</label>
+                        </div>
+                        <div class="form-body-btn">
+                            <button type="submit" class="btn-rounded btn-turquoise">
+                                <span class="icon icon-lg icon-enter"></span>
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="account-questions">
+                <div>@Html.ActionLink("Nie masz konta? Utwórz konto teraz", "Register", "Account")</div>
+                <div>@Html.ActionLink("Nie pamiętasz hasła?", "ForgotPassword", "Account")</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/login")
+}

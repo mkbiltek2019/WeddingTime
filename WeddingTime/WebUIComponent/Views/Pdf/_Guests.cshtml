@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AIT.WebUIComponent.Models.Pdf.PersonModel>
+
+@{
+    var count = Model.Count();
+}
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" style="font-size: 22px">
+                @ViewData["GroupName"] @(count > 0 ? string.Format("({0})", count) : string.Empty)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (count > 0) { 
+            foreach (var person in Model)
+            {
+                <tr>
+                    <td>
+                        @person.FullName
+                    </td>
+                    <td>
+                        @person.Phone
+                    </td>
+                </tr>
+            }
+        }
+        else {
+            <tr>
+                <td colspan="2">Brak</td>
+            </tr>
+        }
+    </tbody>
+</table>

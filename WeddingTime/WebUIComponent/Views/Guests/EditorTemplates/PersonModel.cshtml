@@ -1,0 +1,30 @@
+﻿@model AIT.WebUIComponent.Models.Guests.PersonModel
+
+<div class="modal-slice hidden" id="@ViewData["Index"]-modal-slice">
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model.Name, new { id = @ViewData["Index"] + "-nameTextBox", @class = "form-ctrl", placeholder = "Imię" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model.Surname, new { id = @ViewData["Index"] + "-surnameTextBox", @class = "form-ctrl", placeholder = "Nazwisko" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model.Phone, new { id = @ViewData["Index"] + "-phoneTextBox", @class = "form-ctrl", placeholder = "Telefon kontaktowy" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model.Email, new { id = @ViewData["Index"] + "-emailTextBox", @class = "form-ctrl", placeholder = "E-mail" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model.Address, new { id = @ViewData["Index"] + "-addressTextBox", @class = "form-ctrl", placeholder = "Adres" })
+    </div>
+    <div class="form-ctrl-area">
+        @Html.DropDownListFor(model => model.Genre, new SelectList(Model.GenreCollection, "Value", "Text", Model.Genre), new { id = @ViewData["Index"] + "-genreList", @class = "form-ctrl" })
+    </div>
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model.Status)
+    </div>
+    <div class="form-ctrl-area">        
+        @Html.DropDownListFor(model => model.Status, new SelectList(Model.StatusCollection, "Value", "Text", Model.Status), new { id = @ViewData["Index"] + "-statusList", @class = "form-ctrl" })
+    </div>
+    @Html.Hidden("Id", Model.Id)
+    @Html.Hidden("GroupId", Model.GroupId)
+</div>

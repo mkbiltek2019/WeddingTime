@@ -1,0 +1,48 @@
+﻿@using AIT.WebUIComponent.Models.Guests;
+
+@{
+    ViewBag.Title = " - lista gości";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div id="guestsContainer">
+    <div class="row">
+        <div class="row guest-search">
+            @{ Html.RenderPartial("_Search"); }
+        </div>
+        <div class="row">
+            <div class="guests-actions">
+                <div>
+                    <button type="button" data-toggle="modal" data-target="#createGroupModal" class="btn-simple narrow">
+                        STWÓRZ GRUPĘ
+                    </button>
+                    <button type="button" id="btnReports" class="btn-simple narrow">
+                        EKSPORTUJ GOŚCI
+                    </button>
+                </div>
+                <div id="reports">
+                    @Html.ActionLink("ZACHOWAJ OBECNĄ KOLEJNOŚĆ", "GuestsPdf", "Pdf", null, new { @class = "btn-report", target = "_blank" })
+                    @Html.ActionLink("POSORTUJ WEDŁUG STATUSU", "GuestsByStatusPdf", "Pdf", null, new { @class = "btn-report", target = "_blank" })
+                </div>
+            </div>
+        </div>
+        <div class="row groups-area">
+            <div id="groups">
+
+            </div>
+        </div>
+        @{
+            Html.RenderPartial("_CreateGroup", new GroupModel());
+            Html.RenderPartial("_EditGroup", new GroupModel());
+            Html.RenderPartial("_ModalAnimate", new ViewDataDictionary { { "Action", "CreatePersons" }, { "Controller", "Guests" }, { "Id", "createPersonsModal" }, { "Desc", "DODAJ NOWE OSOBY" } });
+            Html.RenderPartial("_ModalAnimate", new ViewDataDictionary { { "Action", "UpdatePersons" }, { "Controller", "Guests" }, { "Id", "editPersonsModal" }, { "Desc", "AKTUALIZACJA OSÓB" } });
+        }
+    </div>
+</div>
+<div id="undoArea">
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/guests")
+}
+

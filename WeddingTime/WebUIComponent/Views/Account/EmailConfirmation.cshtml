@@ -1,0 +1,50 @@
+﻿@model AIT.WebUIComponent.Models.Account.AutoLoginModel
+
+@{
+    ViewBag.Title = " - rejestracja";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        KONTO JEST JUŻ AKTYWNE
+    </p>
+    <hr class="separator" />
+</div>
+<div class="row">
+    <div class="text-center page-desc">
+        <p>
+            @ViewBag.StatusMessage
+        </p>
+        @if (Model.AutoLoginEnabled)
+        {
+            <div id="autoLogin">
+                @using (Html.BeginForm("AutoLogin", "Account", FormMethod.Post, new { id = "autoLoginForm", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(x => x.UserId)
+                    @Html.HiddenFor(x => x.AutoLoginEnabled)
+                    <p>
+                        Klikając w ten <a id="btnAutoLogin" href="#">link</a> zostaniesz automatycznie zalogowany do serwisu.
+                    </p>
+                }
+                <p>
+                    Po upływie 30 sekund logowanie będzie możliwe jedynie przy użyciu panelu logowania.
+                </p>
+                <div class="text-center">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+        }
+        
+        <div id="normalLogin">
+            <p>
+                Już teraz <strong>@Html.ActionLink("zaloguj się", "Login", "Account", new { returnUrl = "/Home" }, null)</strong> i zacznij korzystać z serwisu Zamiłowani.pl
+            </p>
+        </div>        
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/autologin")    
+}

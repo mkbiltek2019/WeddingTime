@@ -1,0 +1,38 @@
+﻿@model IList<AIT.WebUIComponent.Models.Expenses.ExpenseItemModel>
+
+@{
+    var id = Model[0].Id;
+}
+
+<div class="modal-slice" id="@id-modal-slice">
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model[0].Description)
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Description, new { id = id + "-Description", @class = "form-ctrl" })
+    </div>
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model[0].Quantity)
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Quantity, new { id = id + "-Quantity", @class = "form-ctrl int-input calcField-" + id })
+    </div>
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model[0].UnitPrice)
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].UnitPrice, new { id = id + "-UnitPrice", @class = "form-ctrl float-input calcField-" + id })
+    </div>
+    <div class="form-ctrl-desc">
+        @Html.LabelFor(model => model[0].Price)
+    </div>
+    <div class="form-ctrl-area">
+        @Html.TextBoxFor(model => model[0].Price, new { id = id + "-Price", @class = "form-ctrl float-input" })
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            expensesManager.manageEditFields(@id);
+        });
+    </script>
+</div>

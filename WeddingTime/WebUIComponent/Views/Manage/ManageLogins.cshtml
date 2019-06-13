@@ -1,0 +1,93 @@
+﻿@model AIT.WebUIComponent.Models.Account.ManageLoginsViewModel
+@using Microsoft.Owin.Security
+
+@{
+    ViewBag.Title = " - zewnętrzne konta";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        ZEWNĘTRZNE KONTA
+    </p>
+    <hr class="separator" />
+    <div class="text-center page-desc">
+        <p>
+            @ViewBag.StatusMessage
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-push-4 col-md-4 col-sm-push-3 col-sm-6 col-xs-12 ex-services">
+        @{
+            var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+
+            if (Model.CurrentLogins.Count > 0)
+            {
+                <h4>Powiązane konta:</h4>
+                <table class="table">
+                    <tbody>
+                        @foreach (var account in Model.CurrentLogins)
+                        {
+                            <tr>
+                                <td class="text">@account.LoginProvider</td>
+                                <td>
+                                    @if (ViewBag.ShowRemoveButton)
+                                    {
+                                        using (Html.BeginForm("RemoveLogin", "Manage"))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <div class="delete-ex-login">
+                                                @Html.Hidden("loginProvider", account.LoginProvider)
+                                                @Html.Hidden("providerKey", account.ProviderKey)
+                                                <button type="submit" class="btn-rounded btn-dismiss">
+                                                    <span class="icon icon-lg icon-trash"></span>
+                                                </button>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        @: &nbsp;
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            if (Model.OtherLogins.Count > 0)
+            {
+                <h4>Dodaj możliwość logowania z konta:</h4>
+                using (Html.BeginForm("LinkLogin", "Manage"))
+                {
+                    @Html.AntiForgeryToken()
+                    <table class="table">
+                        <tbody>
+                            @foreach (AuthenticationDescription p in Model.OtherLogins)
+                            {
+                                <tr>
+                                    <td class="text">@p.AuthenticationType</td>
+                                    <td>
+                                        <div class="add-ex-login">
+                                            <button class="btn-rounded btn-turquoise" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                                <span class="icon icon-lg icon-add"></span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            }
+        }
+    </div>
+</div>
+
+
+
+
+
+
+

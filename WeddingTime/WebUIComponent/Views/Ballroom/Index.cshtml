@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = " - sala weselna";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div id="ballroomContainer">
+    <div class="switch-display ballroom hidden-xs hidden-sm">
+        <button type="button" class="btn-rounded btn-small btn-blue" id="btnToggleLayout">
+            <span class="icon icon-sm icon-left"></span>
+        </button>
+    </div>   
+    <div class="row hidden-xs">
+        <div class="ballroom-panel">
+            <div class="ballroom-btns-area">
+                <button id="btnBallroomItems" class="btn-rounded btn-turquoise nohover">
+                    <span class="icon icon-lg icon-items"></span>
+                </button>
+                <button id="btnSaveLayout" class="btn-rounded btn-turquoise disabled">
+                    <span class="icon icon-lg icon-save"></span>
+                </button>                
+                @{ Html.RenderPartial("_BallroomItems"); }                
+            </div>
+            <div class="guests-panel-action">
+                <button id="btnPersonsPanel" class="btn-rounded btn-turquoise nohover">
+                    <span class="icon-ballroom icon-guests"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="guests-panel">            
+            <div id="guests">
+                <ul class="list-group ballroom-couple">
+                    <li pid="bride" class="list-group-item">
+                        <div class="list-item-content">
+                            <div class="ballroom-guest-content">
+                                <div class="ballroom-guest bride">Panna młoda</div>
+                            </div>
+                            <div class="list-item-handle"></div>
+                        </div>
+                    </li>
+                    <li pid="groom" class="list-group-item">
+                        <div class="list-item-content">
+                            <div class="ballroom-guest-content">
+                                <div class="ballroom-guest groom">Pan młody</div>
+                            </div>
+                            <div class="list-item-handle"></div>
+                        </div>
+                    </li>
+                </ul>
+                @* complemented by ajax call *@
+            </div>
+        </div>
+        <div class="layout-container" id="layoutContainer">
+            <div class="layout-content">
+                <div class="ballroom-layout narrow" id="ballroomLayout">
+
+                </div>
+            </div>
+            <div class="layout-change narrow-v hidden-xs">
+                <button class="btn-rounded btn-small btn-turquoise btn-layout" name="narrowV">
+                    <span class="icon icon-sm icon-narrow-v"></span>
+                </button>
+            </div>            
+            <div class="layout-change narrow-h hidden-xs">
+                <button class="btn-rounded btn-small btn-turquoise btn-layout" name="narrowH">
+                    <span class="icon icon-sm icon-narrow-h"></span>
+                </button>
+            </div>
+            <div class="layout-change expand-layout hidden-xs" id="expandLayoutBtns">
+                <button class="btn-rounded btn-small btn-turquoise btn-layout" name="expandV">
+                    <span class="icon icon-sm icon-expand-v"></span>
+                </button>                
+                <button class="btn-rounded btn-small btn-turquoise btn-layout" name="expandH">
+                    <span class="icon icon-sm icon-expand-h"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/ballroom")
+}

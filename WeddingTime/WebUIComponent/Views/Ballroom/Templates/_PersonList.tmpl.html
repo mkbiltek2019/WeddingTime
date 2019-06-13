@@ -1,0 +1,24 @@
+﻿<div>
+    <div class="ballroom-guests-group">
+        <div class="guests-group-name truncate nowrap" title="{{:Name}}">
+            {{:Name}}
+        </div>
+        <div class="guests-group-action">
+            <button type="button" class="btn-rounded btn-turquoise nohover btn-expand-group">
+                <span class="icon icon-lg icon-expand"></span>
+            </button>
+        </div>
+    </div>
+    <ul class="list-group ballroom-guests">
+        {{props Persons}}
+        <li pid="{{>key}}" class="list-group-item">
+            <div class="list-item-content">
+                <div class="ballroom-guest-content">
+                    <div class="ballroom-guest guest truncate nowrap">{{>prop.Name}} {{>prop.Surname}}</div>
+                </div>
+                <div class="list-item-handle"></div>
+            </div>
+        </li>
+        {{/props}}
+    </ul>
+</div>

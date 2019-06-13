@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="STRONA GŁÓWNA" controller="Home" action="Index">
+    <mvcSiteMapNode title="LISTA GOŚCI" controller="Guests" action="Index"/>
+    <mvcSiteMapNode title="WYDATKI" controller="Expenses" action="Index"/>
+    <mvcSiteMapNode title="ZADANIA" controller="Tasks" action="Index"/>
+    <mvcSiteMapNode title="SALA WESELNA" controller="Ballroom" action="Index"/>
+    <mvcSiteMapNode title="KONTAKT" controller="Home" action="Contact"/>
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

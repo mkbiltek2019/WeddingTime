@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content sub-page">
+    <div class="container">
+        <section class="col-md-3 visible-md visible-lg">
+            <div class="sub-img"></div>
+        </section>
+        <section class="col-md-9">
+            @RenderBody()
+        </section>
+    </div>
+</div>
+
+@section scripts {
+    @RenderSection("scripts", required: false)
+}

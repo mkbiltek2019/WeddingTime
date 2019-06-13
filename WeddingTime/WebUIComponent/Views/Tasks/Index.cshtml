@@ -1,0 +1,70 @@
+﻿@using AIT.TaskDomain.Model.Enums;
+
+@{
+    ViewBag.Title = " - zadania";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div id="tasksContainer">
+    <div class="row">
+        <div class="add-task-area">
+            <div class="add-task-action">
+                <button type="button" class="btn-rounded btn-turquoise" id="btnAddTask" title="Dodaj nowe zadanie">
+                    <span class="icon icon-lg icon-add"></span>
+                </button>
+            </div>
+            <div id="newTaskArea" class="new-task-actions">
+                @{ Html.RenderPartial("_CreateTask"); }
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="relative-position">
+            <div class="switch-display task hidden-xs hidden-sm">
+                <button type="button" class="btn-rounded btn-small btn-turquoise" id="btnToggleLayout">
+                    <span class="icon icon-sm icon-left"></span>
+                </button>
+            </div>
+            <div id="tasksBoard" class="tasks-board">
+                <div class="tasks-row">
+                    <div class="tasks-cell outside narrow skin-green tasks-single-line">
+                        <div class="tasks-header skin-green">
+                            Nowe
+                        </div>
+                        <div id="newTasksArea" class="tasks-area" data-state="@((int)TaskState.NewTask)">
+
+                        </div>
+                    </div>
+                    <div class="tasks-cell skin-blue tasks-multiple-row">
+                        <div class="tasks-header skin-blue">
+                            Trwające
+                        </div>
+                        <div id="ongoingTasksArea" class="tasks-area" data-state="@((int)TaskState.OngoingTask)">
+
+                        </div>
+                    </div>
+                    <div class="tasks-cell outside skin-powder tasks-single-line">
+                        <div class="tasks-header skin-powder">
+                            Zakończone
+                        </div>
+                        <div id="doneTasksArea" class="tasks-area" data-state="@((int)TaskState.DoneTask)">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @{
+        Html.RenderPartial("_UpdateTask");
+        Html.RenderPartial("_TaskCard");
+    }
+</div>
+<div id="undoArea">
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/tasks")
+}

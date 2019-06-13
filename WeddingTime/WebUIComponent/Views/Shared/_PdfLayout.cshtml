@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+    var imagePath = Server.MapPath("~/Images");
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>        
+        table {
+            width: 100%;
+            border-spacing: 0px;
+            margin-bottom: 15px;
+        }
+
+        table thead tr th {
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        table tbody tr td {
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-left-color: white;
+            border-right-color: white;
+            border-top-color: white;
+            padding: 8px 15px;
+        }
+
+        .clear-border {
+            border-bottom-color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="@imagePath/logo_small.png" />
+    </p>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

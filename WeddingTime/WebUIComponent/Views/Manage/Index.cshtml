@@ -1,0 +1,99 @@
+﻿@model AIT.WebUIComponent.Models.Account.IndexViewModel
+@{
+    ViewBag.Title = " - ustawienia konta";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        USTAWIENIA KONTA
+    </p>
+    <hr class="separator" />
+    <div class="text-center page-desc">
+        <p>
+            @ViewBag.StatusMessage
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-push-3 col-sm-push-2 col-md-6 col-sm-8 col-sm-12 account-settings">
+        <table class="table">
+            <tr>
+                <td class="text-right text">
+                    Nazwa użytkownika:
+                </td>
+                <td colspan="2" class="text">
+                    @Model.Username
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right text">
+                    Hasło:
+                </td>
+                <td class="text">
+                    @if (Model.HasPassword)
+                    {
+                        @:&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;
+                    }
+                </td>
+                <td>
+                    @if (Model.HasPassword)
+                    {
+                        <a href="@Url.Action("ChangePassword")" class="btn-rounded btn-turquoise btn-manage" title="Zmień hasło">
+                            <span class="icon icon-lg icon-edit"></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("SetPassword")" class="btn-rounded btn-turquoise btn-manage" title="Dodaj hasło">
+                            <span class="icon icon-lg icon-add"></span>
+                        </a>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right text">
+                    Adres e-mail:
+                </td>
+                <td class="text">
+                    @Model.Email
+                </td>
+                <td>
+                    <a href="@Url.Action("ChangeEmail")" class="btn-rounded btn-turquoise btn-manage" title="Zmień adres e-mail">
+                        <span class="icon icon-lg icon-edit"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                @if (Model.LoginsCount > 0)
+                {
+                    <td class="text-right text">
+                        Połączono z
+                    </td>
+                    <td class="text">
+                        @Model.LoginsCount
+                        @if (Model.LoginsCount == 1)
+                        {
+                            @:&nbsp;zewnętrznym kontem
+                        }
+                        else
+                        {
+                            @:&nbsp;zewnętrznymi kontami
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("ManageLogins")" class="btn-rounded btn-turquoise btn-manage">
+                            <span class="icon icon-lg icon-edit"></span>
+                        </a>
+                    </td>
+                }
+                else
+                {
+                    <td colspan="3" class="text-center text">
+                        @Html.ActionLink("Połącz z zewnętrznym kontem", "ManageLogins")
+                    </td>
+                }
+            </tr>
+        </table>
+    </div>
+</div>

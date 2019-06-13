@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = " - błąd logowania";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        BŁĄD LOGOWANIA Z ZEWNĘTRZNEGO SERWISU
+    </p>
+    <hr class="separator" />
+</div>
+<div class="row">
+    <div class="text-center page-desc">
+        <p>
+            Wystąpił błąd podczas próby logowania z zewnętrznego serwisu.
+        </p>
+        <p>
+            Spróbuj ponownie lub @Html.ActionLink("skontaktuj się z nami", "Contact", "Home").
+        </p>
+    </div>
+</div>

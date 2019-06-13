@@ -1,0 +1,305 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{0C623A8F-7D4C-4654-91ED-5CCC32C8F8F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{2DA4F806-7850-4EC3-9840-8D33F86156D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BallroomDomain", "BallroomDomain", "{34883EE4-43E3-4265-AB6A-50EC439743FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GuestDomain", "GuestDomain", "{2ECD18FD-D9C4-4CAC-AE50-98AD1F8FBB48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserDomain", "UserDomain", "{894DC7E8-8E95-4E1F-929C-EB1FB1E56A5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{B27F1FAF-328B-404C-8C73-FC5241054D83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{FAAD018C-6667-4B29-9864-6A276C531BA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExpenseManagement", "ExpenseManagement", "{FD39CFEA-5759-4AD3-A198-BFB9AFD6225A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TaskDomain", "TaskDomain", "{66021D7A-1CE7-4887-A8CB-B44217E6384C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UndoManagement", "UndoManagement", "{806FD8CE-09F7-4AFE-B576-BAD99FE9FB27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUIComponent", "WebUIComponent\WebUIComponent.csproj", "{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUIComponent.Resources", "..\Resources\WebUIComponent.Resources\WebUIComponent.Resources.csproj", "{C7C95882-B6C2-482B-8621-C5A4265E80DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesComponents", "..\Utilities\UtilitiesComponents\UtilitiesComponents.csproj", "{1FDB5D04-8647-4595-B5FC-D11795E2F4EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUtilities", "..\Utilities\WebUtilities\WebUtilities.csproj", "{D8A318ED-5789-4047-A9E6-2D685FEDD2AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainUtilities", "..\Domains\DomainUtilities\DomainUtilities.csproj", "{A3B01275-83B9-4879-BAC2-28030F8C1E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallroomDomain.Infrastructure", "..\Domains\BallroomDomain.Infrastructure\BallroomDomain.Infrastructure.csproj", "{4E2DDA98-0FE1-41F1-9C59-AB2673591C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallroomDomain.Model", "..\Domains\BallroomDomain.Model\BallroomDomain.Model.csproj", "{2BF57E77-A17B-42A7-9403-FEBC0EF825E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallroomDomain.Services", "..\Domains\BallroomDomain.Services\BallroomDomain.Services.csproj", "{4CBCD476-56A5-4AAD-B480-82F48230B6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestDomain.Infrastructure", "..\Domains\GuestDomain.Infrastructure\GuestDomain.Infrastructure.csproj", "{D18B7767-69A0-4178-A48A-7EF4E82761C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestDomain.Model", "..\Domains\GuestDomain.Model\GuestDomain.Model.csproj", "{5B0BB791-6C7D-49B5-AE75-4937AB669742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestDomain.Services", "..\Domains\GuestDomain.Services\GuestDomain.Services.csproj", "{8FEF896C-50F8-4850-A140-1845E65B1ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDomain.Services", "..\Domains\UserDomain.Services\UserDomain.Services.csproj", "{AA2E27E3-57BD-4B55-B6CA-3C6F83530868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaksDomain.Infrastructure", "..\Domains\TaksDomain.Infrastructure\TaksDomain.Infrastructure.csproj", "{F1A913EA-C6FE-4FE7-BF91-6CEF83315149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskDomain.Model", "..\Domains\TaskDomain.Model\TaskDomain.Model.csproj", "{1A4E8F77-D163-4F40-B311-17B37D2A67F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskDomain.Services", "..\Domains\TaskDomain.Services\TaskDomain.Services.csproj", "{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Infrastructure", "..\ExpenseManagement\ExpenseManagement.Infrastructure\ExpenseManagement.Infrastructure.csproj", "{522902BE-E6D7-445B-A41E-40F496ED1CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Model", "..\ExpenseManagement\ExpenseManagement.Model\ExpenseManagement.Model.csproj", "{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManagement.Services", "..\ExpenseManagement\ExpenseManagement.Services\ExpenseManagement.Services.csproj", "{352751A9-DB9A-471E-89CC-B04D6611AA78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoManagement.Infrastructure", "..\UndoManagement\UndoManagement.Infrastructure\UndoManagement.Infrastructure.csproj", "{0276821F-B416-4690-BCDD-1D84FFA2DE34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoManagement.Model", "..\UndoManagement\UndoManagement.Model\UndoManagement.Model.csproj", "{553E5A0C-C5D2-41E9-A880-7411C39A2D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoManagement.Services", "..\UndoManagement\UndoManagement.Services\UndoManagement.Services.csproj", "{8B2B21C0-A745-400A-885F-8A9B1A223361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDomain.Model", "..\Domains\UserDomain.Model\UserDomain.Model.csproj", "{6DF66E95-6534-409E-9EC5-DD6EE4ABC491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDomain.Infrastructure", "..\Domains\UserDomain.Infrastructure\UserDomain.Infrastructure.csproj", "{AE377DC3-74E3-4F1B-81DC-84B50D1652C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C95882-B6C2-482B-8621-C5A4265E80DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C95882-B6C2-482B-8621-C5A4265E80DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C95882-B6C2-482B-8621-C5A4265E80DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C95882-B6C2-482B-8621-C5A4265E80DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDB5D04-8647-4595-B5FC-D11795E2F4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDB5D04-8647-4595-B5FC-D11795E2F4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDB5D04-8647-4595-B5FC-D11795E2F4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDB5D04-8647-4595-B5FC-D11795E2F4EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A318ED-5789-4047-A9E6-2D685FEDD2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A318ED-5789-4047-A9E6-2D685FEDD2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A318ED-5789-4047-A9E6-2D685FEDD2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A318ED-5789-4047-A9E6-2D685FEDD2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B01275-83B9-4879-BAC2-28030F8C1E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B01275-83B9-4879-BAC2-28030F8C1E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B01275-83B9-4879-BAC2-28030F8C1E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B01275-83B9-4879-BAC2-28030F8C1E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2DDA98-0FE1-41F1-9C59-AB2673591C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2DDA98-0FE1-41F1-9C59-AB2673591C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2DDA98-0FE1-41F1-9C59-AB2673591C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2DDA98-0FE1-41F1-9C59-AB2673591C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF57E77-A17B-42A7-9403-FEBC0EF825E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF57E77-A17B-42A7-9403-FEBC0EF825E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF57E77-A17B-42A7-9403-FEBC0EF825E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF57E77-A17B-42A7-9403-FEBC0EF825E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CBCD476-56A5-4AAD-B480-82F48230B6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CBCD476-56A5-4AAD-B480-82F48230B6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CBCD476-56A5-4AAD-B480-82F48230B6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CBCD476-56A5-4AAD-B480-82F48230B6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18B7767-69A0-4178-A48A-7EF4E82761C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18B7767-69A0-4178-A48A-7EF4E82761C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18B7767-69A0-4178-A48A-7EF4E82761C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18B7767-69A0-4178-A48A-7EF4E82761C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0BB791-6C7D-49B5-AE75-4937AB669742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0BB791-6C7D-49B5-AE75-4937AB669742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0BB791-6C7D-49B5-AE75-4937AB669742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0BB791-6C7D-49B5-AE75-4937AB669742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FEF896C-50F8-4850-A140-1845E65B1ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FEF896C-50F8-4850-A140-1845E65B1ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FEF896C-50F8-4850-A140-1845E65B1ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FEF896C-50F8-4850-A140-1845E65B1ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2E27E3-57BD-4B55-B6CA-3C6F83530868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2E27E3-57BD-4B55-B6CA-3C6F83530868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2E27E3-57BD-4B55-B6CA-3C6F83530868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2E27E3-57BD-4B55-B6CA-3C6F83530868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A913EA-C6FE-4FE7-BF91-6CEF83315149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A913EA-C6FE-4FE7-BF91-6CEF83315149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A913EA-C6FE-4FE7-BF91-6CEF83315149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A913EA-C6FE-4FE7-BF91-6CEF83315149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4E8F77-D163-4F40-B311-17B37D2A67F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4E8F77-D163-4F40-B311-17B37D2A67F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4E8F77-D163-4F40-B311-17B37D2A67F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4E8F77-D163-4F40-B311-17B37D2A67F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522902BE-E6D7-445B-A41E-40F496ED1CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522902BE-E6D7-445B-A41E-40F496ED1CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522902BE-E6D7-445B-A41E-40F496ED1CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522902BE-E6D7-445B-A41E-40F496ED1CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352751A9-DB9A-471E-89CC-B04D6611AA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352751A9-DB9A-471E-89CC-B04D6611AA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352751A9-DB9A-471E-89CC-B04D6611AA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352751A9-DB9A-471E-89CC-B04D6611AA78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0276821F-B416-4690-BCDD-1D84FFA2DE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0276821F-B416-4690-BCDD-1D84FFA2DE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0276821F-B416-4690-BCDD-1D84FFA2DE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0276821F-B416-4690-BCDD-1D84FFA2DE34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{553E5A0C-C5D2-41E9-A880-7411C39A2D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{553E5A0C-C5D2-41E9-A880-7411C39A2D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{553E5A0C-C5D2-41E9-A880-7411C39A2D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{553E5A0C-C5D2-41E9-A880-7411C39A2D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2B21C0-A745-400A-885F-8A9B1A223361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2B21C0-A745-400A-885F-8A9B1A223361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2B21C0-A745-400A-885F-8A9B1A223361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2B21C0-A745-400A-885F-8A9B1A223361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF66E95-6534-409E-9EC5-DD6EE4ABC491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF66E95-6534-409E-9EC5-DD6EE4ABC491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF66E95-6534-409E-9EC5-DD6EE4ABC491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF66E95-6534-409E-9EC5-DD6EE4ABC491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE377DC3-74E3-4F1B-81DC-84B50D1652C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE377DC3-74E3-4F1B-81DC-84B50D1652C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE377DC3-74E3-4F1B-81DC-84B50D1652C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE377DC3-74E3-4F1B-81DC-84B50D1652C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34883EE4-43E3-4265-AB6A-50EC439743FF} = {2DA4F806-7850-4EC3-9840-8D33F86156D0}
+		{2ECD18FD-D9C4-4CAC-AE50-98AD1F8FBB48} = {2DA4F806-7850-4EC3-9840-8D33F86156D0}
+		{894DC7E8-8E95-4E1F-929C-EB1FB1E56A5C} = {2DA4F806-7850-4EC3-9840-8D33F86156D0}
+		{66021D7A-1CE7-4887-A8CB-B44217E6384C} = {2DA4F806-7850-4EC3-9840-8D33F86156D0}
+		{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1} = {0C623A8F-7D4C-4654-91ED-5CCC32C8F8F7}
+		{C7C95882-B6C2-482B-8621-C5A4265E80DF} = {B27F1FAF-328B-404C-8C73-FC5241054D83}
+		{1FDB5D04-8647-4595-B5FC-D11795E2F4EC} = {FAAD018C-6667-4B29-9864-6A276C531BA2}
+		{D8A318ED-5789-4047-A9E6-2D685FEDD2AC} = {FAAD018C-6667-4B29-9864-6A276C531BA2}
+		{A3B01275-83B9-4879-BAC2-28030F8C1E38} = {FAAD018C-6667-4B29-9864-6A276C531BA2}
+		{4E2DDA98-0FE1-41F1-9C59-AB2673591C52} = {34883EE4-43E3-4265-AB6A-50EC439743FF}
+		{2BF57E77-A17B-42A7-9403-FEBC0EF825E6} = {34883EE4-43E3-4265-AB6A-50EC439743FF}
+		{4CBCD476-56A5-4AAD-B480-82F48230B6D8} = {34883EE4-43E3-4265-AB6A-50EC439743FF}
+		{D18B7767-69A0-4178-A48A-7EF4E82761C1} = {2ECD18FD-D9C4-4CAC-AE50-98AD1F8FBB48}
+		{5B0BB791-6C7D-49B5-AE75-4937AB669742} = {2ECD18FD-D9C4-4CAC-AE50-98AD1F8FBB48}
+		{8FEF896C-50F8-4850-A140-1845E65B1ADB} = {2ECD18FD-D9C4-4CAC-AE50-98AD1F8FBB48}
+		{AA2E27E3-57BD-4B55-B6CA-3C6F83530868} = {894DC7E8-8E95-4E1F-929C-EB1FB1E56A5C}
+		{F1A913EA-C6FE-4FE7-BF91-6CEF83315149} = {66021D7A-1CE7-4887-A8CB-B44217E6384C}
+		{1A4E8F77-D163-4F40-B311-17B37D2A67F8} = {66021D7A-1CE7-4887-A8CB-B44217E6384C}
+		{ABB2AA78-3D08-4CDB-95BA-F1BC7E978CD3} = {66021D7A-1CE7-4887-A8CB-B44217E6384C}
+		{522902BE-E6D7-445B-A41E-40F496ED1CD9} = {FD39CFEA-5759-4AD3-A198-BFB9AFD6225A}
+		{B1CCC29D-7AAF-4E2D-A8EC-06D2D2968FCE} = {FD39CFEA-5759-4AD3-A198-BFB9AFD6225A}
+		{352751A9-DB9A-471E-89CC-B04D6611AA78} = {FD39CFEA-5759-4AD3-A198-BFB9AFD6225A}
+		{0276821F-B416-4690-BCDD-1D84FFA2DE34} = {806FD8CE-09F7-4AFE-B576-BAD99FE9FB27}
+		{553E5A0C-C5D2-41E9-A880-7411C39A2D67} = {806FD8CE-09F7-4AFE-B576-BAD99FE9FB27}
+		{8B2B21C0-A745-400A-885F-8A9B1A223361} = {806FD8CE-09F7-4AFE-B576-BAD99FE9FB27}
+		{6DF66E95-6534-409E-9EC5-DD6EE4ABC491} = {894DC7E8-8E95-4E1F-929C-EB1FB1E56A5C}
+		{AE377DC3-74E3-4F1B-81DC-84B50D1652C5} = {894DC7E8-8E95-4E1F-929C-EB1FB1E56A5C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.PolicyInjection.5.0.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.PolicyInjection.6.0.1304.0\lib\NET45
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 24
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://anywhereit.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Domains\\BallroomDomain.Infrastructure\\BallroomDomain.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName1 = WeddingTime.sln
+		SccProjectName1 = ../Domains/BallroomDomain.Infrastructure
+		SccLocalPath1 = ..\\Domains\\BallroomDomain.Infrastructure
+		SccProjectUniqueName2 = ..\\Domains\\BallroomDomain.Model\\BallroomDomain.Model.csproj
+		SccProjectTopLevelParentUniqueName2 = WeddingTime.sln
+		SccProjectName2 = ../Domains/BallroomDomain.Model
+		SccLocalPath2 = ..\\Domains\\BallroomDomain.Model
+		SccProjectUniqueName3 = ..\\Domains\\BallroomDomain.Services\\BallroomDomain.Services.csproj
+		SccProjectTopLevelParentUniqueName3 = WeddingTime.sln
+		SccProjectName3 = ../Domains/BallroomDomain.Services
+		SccLocalPath3 = ..\\Domains\\BallroomDomain.Services
+		SccProjectUniqueName4 = ..\\Domains\\DomainUtilities\\DomainUtilities.csproj
+		SccProjectTopLevelParentUniqueName4 = WeddingTime.sln
+		SccProjectName4 = ../Domains/DomainUtilities
+		SccLocalPath4 = ..\\Domains\\DomainUtilities
+		SccProjectUniqueName5 = ..\\Domains\\GuestDomain.Infrastructure\\GuestDomain.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName5 = WeddingTime.sln
+		SccProjectName5 = ../Domains/GuestDomain.Infrastructure
+		SccLocalPath5 = ..\\Domains\\GuestDomain.Infrastructure
+		SccProjectUniqueName6 = ..\\Domains\\GuestDomain.Model\\GuestDomain.Model.csproj
+		SccProjectTopLevelParentUniqueName6 = WeddingTime.sln
+		SccProjectName6 = ../Domains/GuestDomain.Model
+		SccLocalPath6 = ..\\Domains\\GuestDomain.Model
+		SccProjectUniqueName7 = ..\\Domains\\GuestDomain.Services\\GuestDomain.Services.csproj
+		SccProjectTopLevelParentUniqueName7 = WeddingTime.sln
+		SccProjectName7 = ../Domains/GuestDomain.Services
+		SccLocalPath7 = ..\\Domains\\GuestDomain.Services
+		SccProjectUniqueName8 = ..\\Domains\\TaksDomain.Infrastructure\\TaksDomain.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName8 = WeddingTime.sln
+		SccProjectName8 = ../Domains/TaksDomain.Infrastructure
+		SccLocalPath8 = ..\\Domains\\TaksDomain.Infrastructure
+		SccProjectUniqueName9 = ..\\Domains\\TaskDomain.Model\\TaskDomain.Model.csproj
+		SccProjectTopLevelParentUniqueName9 = WeddingTime.sln
+		SccProjectName9 = ../Domains/TaskDomain.Model
+		SccLocalPath9 = ..\\Domains\\TaskDomain.Model
+		SccProjectUniqueName10 = ..\\Domains\\TaskDomain.Services\\TaskDomain.Services.csproj
+		SccProjectTopLevelParentUniqueName10 = WeddingTime.sln
+		SccProjectName10 = ../Domains/TaskDomain.Services
+		SccLocalPath10 = ..\\Domains\\TaskDomain.Services
+		SccProjectUniqueName11 = ..\\Domains\\UserDomain.Services\\UserDomain.Services.csproj
+		SccProjectTopLevelParentUniqueName11 = WeddingTime.sln
+		SccProjectName11 = ../Domains/UserDomain.Services
+		SccLocalPath11 = ..\\Domains\\UserDomain.Services
+		SccProjectUniqueName12 = ..\\Resources\\WebUIComponent.Resources\\WebUIComponent.Resources.csproj
+		SccProjectTopLevelParentUniqueName12 = WeddingTime.sln
+		SccProjectName12 = ../Resources/WebUIComponent.Resources
+		SccLocalPath12 = ..\\Resources\\WebUIComponent.Resources
+		SccProjectUniqueName13 = ..\\Utilities\\UtilitiesComponents\\UtilitiesComponents.csproj
+		SccProjectTopLevelParentUniqueName13 = WeddingTime.sln
+		SccProjectName13 = ../Utilities/UtilitiesComponents
+		SccLocalPath13 = ..\\Utilities\\UtilitiesComponents
+		SccProjectUniqueName14 = ..\\Utilities\\WebUtilities\\WebUtilities.csproj
+		SccProjectTopLevelParentUniqueName14 = WeddingTime.sln
+		SccProjectName14 = ../Utilities/WebUtilities
+		SccLocalPath14 = ..\\Utilities\\WebUtilities
+		SccProjectUniqueName15 = WebUIComponent\\WebUIComponent.csproj
+		SccProjectTopLevelParentUniqueName15 = WeddingTime.sln
+		SccProjectName15 = WebUIComponent
+		SccLocalPath15 = WebUIComponent
+		SccProjectUniqueName16 = ..\\ExpenseManagement\\ExpenseManagement.Infrastructure\\ExpenseManagement.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName16 = WeddingTime.sln
+		SccProjectName16 = ../ExpenseManagement/ExpenseManagement.Infrastructure
+		SccLocalPath16 = ..\\ExpenseManagement\\ExpenseManagement.Infrastructure
+		SccProjectUniqueName17 = ..\\ExpenseManagement\\ExpenseManagement.Model\\ExpenseManagement.Model.csproj
+		SccProjectTopLevelParentUniqueName17 = WeddingTime.sln
+		SccProjectName17 = ../ExpenseManagement/ExpenseManagement.Model
+		SccLocalPath17 = ..\\ExpenseManagement\\ExpenseManagement.Model
+		SccProjectUniqueName18 = ..\\ExpenseManagement\\ExpenseManagement.Services\\ExpenseManagement.Services.csproj
+		SccProjectTopLevelParentUniqueName18 = WeddingTime.sln
+		SccProjectName18 = ../ExpenseManagement/ExpenseManagement.Services
+		SccLocalPath18 = ..\\ExpenseManagement\\ExpenseManagement.Services
+		SccProjectUniqueName19 = ..\\UndoManagement\\UndoManagement.Infrastructure\\UndoManagement.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName19 = WeddingTime.sln
+		SccProjectName19 = ../UndoManagement/UndoManagement.Infrastructure
+		SccLocalPath19 = ..\\UndoManagement\\UndoManagement.Infrastructure
+		SccProjectUniqueName20 = ..\\UndoManagement\\UndoManagement.Services\\UndoManagement.Services.csproj
+		SccProjectTopLevelParentUniqueName20 = WeddingTime.sln
+		SccProjectName20 = ../UndoManagement/UndoManagement.Services
+		SccLocalPath20 = ..\\UndoManagement\\UndoManagement.Services
+		SccProjectUniqueName21 = ..\\UndoManagement\\UndoManagement.Model\\UndoManagement.Model.csproj
+		SccProjectTopLevelParentUniqueName21 = WeddingTime.sln
+		SccProjectName21 = ../UndoManagement/UndoManagement.Model
+		SccLocalPath21 = ..\\UndoManagement\\UndoManagement.Model
+		SccProjectUniqueName22 = ..\\Domains\\UserDomain.Model\\UserDomain.Model.csproj
+		SccProjectTopLevelParentUniqueName22 = WeddingTime.sln
+		SccProjectName22 = ../Domains/UserDomain.Model
+		SccLocalPath22 = ..\\Domains\\UserDomain.Model
+		SccProjectUniqueName23 = ..\\Domains\\UserDomain.Infrastructure\\UserDomain.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName23 = WeddingTime.sln
+		SccProjectName23 = ../Domains/UserDomain.Infrastructure
+		SccLocalPath23 = ..\\Domains\\UserDomain.Infrastructure
+	EndGlobalSection
+EndGlobal

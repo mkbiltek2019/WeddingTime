@@ -1,0 +1,56 @@
+﻿
+<div class="modal fade animate-modal" id="@ViewData["Id"]" tabindex="-1" role="dialog" aria-labelledby="lblAnimateModalDesc" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            @using (Ajax.BeginForm(ViewData["Action"].ToString(), ViewData["Controller"].ToString(), null, new AjaxOptions
+            {
+                OnBegin = "dialogAnimation.begin",
+                OnSuccess = "dialogAnimation.success",
+                OnFailure = "dialogAnimation.error"
+            }, new { autocomplete = "off" }))
+            {
+                <div class="modal-header">
+                    <button type="button" class="btn-rounded btn-small btn-dismiss right" data-dismiss="modal" aria-hidden="true">
+                        <span class="icon icon-sm icon-cancel"></span>
+                    </button>
+                    <h4 class="modal-title" id="lblAnimateModalDesc">@ViewData["Desc"]</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-1">
+                            <button type="button" class="btn-rounded btn-small btn-turquoise btn-anim-modal-prev disabled" tabindex="-1" title="Poprzedni">
+                                <span class="icon icon-sm icon-left"></span>
+                            </button>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="modal-body-content">
+                                @* content added dynamically *@
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <button type="button" class="btn-rounded btn-small btn-turquoise btn-anim-modal-next disabled" tabindex="-1" title="Następny">
+                                <span class="icon icon-sm icon-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <hr class="separator" />
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <ol class="items-indicators" tabindex="-1"></ol>
+                        </div>
+                        <div class="col-xs-1">
+                            <button type="button" class="btn-rounded btn-small btn-turquoise btn-anim-modal-del-last" tabindex="-1" title="Usuń">
+                                <span class="icon icon-sm icon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-rounded btn-turquoise disabled" title="Zapisz">
+                        <span class="icon icon-lg icon-save"></span>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

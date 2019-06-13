@@ -1,0 +1,11 @@
+﻿@model IEnumerable<AIT.WebUIComponent.Models.Pdf.GroupModel>
+
+@{
+    ViewBag.Title = "Guests pdf";
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";    
+}
+
+@foreach (var group in Model)
+{
+    Html.RenderPartial("_Guests", group.Persons, new ViewDataDictionary { { "GroupName", group.Name } });
+}

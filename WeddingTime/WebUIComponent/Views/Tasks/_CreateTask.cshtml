@@ -1,0 +1,15 @@
+﻿@using (Ajax.BeginForm("CreateTask", "Tasks", new AjaxOptions
+{
+    OnBegin = "tasksManager.beforeTaskSave",
+    OnSuccess = "tasksManager.onTaskSaved",
+    OnFailure = "tasksManager.onTaskSaveFailure"
+}, new { id = "createTaskForm" }))
+{
+    <input type="text" name="TaskTitle" id="txtBudgetValue" data-val="true" data-val-required class="new-task-input" placeholder="Nazwa zadania" />
+    <button type ="submit" class="btn-rounded btn-turquoise" title="Zapisz">
+        <span class="icon icon-lg icon-save"></span>
+    </button>
+    <button type="button" id="btnCancelAdd" class="btn-rounded btn-dismiss" title="Anuluj">
+        <span class="icon icon-lg icon-cancel"></span>
+    </button>
+}

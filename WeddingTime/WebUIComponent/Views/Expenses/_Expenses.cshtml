@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AIT.WebUIComponent.Models.Expenses.ExpenseItemModel>
+
+<div class="row">
+    <ul id="expensesList" class="list-group">
+        @foreach (var expense in Model)
+        {
+            <li class="list-group-item" eid="@expense.Id">
+                <div class="list-item-content">
+                    <div class="expenses-content">
+                        <div class="row list-item-row">
+                            <div class="col-xs-10 col-sm-6">
+                                <span class="list-item-checkbox" title="Zaznacz wydatek">
+                                    <label class="btn-rounded btn-turquoise nohover btn-checkbox">
+                                        <input type="checkbox">
+                                        <span class="icon icon-lg icon-coins"></span>
+                                    </label>
+                                </span>
+                                <span class="checkbox-desc list-value" data-bind="description" data-bind-callback="expensesManager.updateFilterMap">
+                                    @expense.Description
+                                </span>
+                            </div>
+                            <div class="hidden-xs col-sm-1">
+                                <span class="list-value" data-bind="quantity">
+                                    @expense.Quantity
+                                </span>
+                            </div>
+                            <div class="hidden-xs col-sm-2">
+                                <span class="list-value" data-bind="unitPrice">
+                                    @expense.UnitPrice
+                                </span>
+                            </div>
+                            <div class="col-xs-2 col-sm-3">
+                                <div class="pull-left">
+                                    <span class="list-value" data-bind="price" data-bind-callback="expensesManager.updateExpensesMap">
+                                        @expense.Price
+                                    </span>
+                                </div>
+                                <div id="expenseBtnArea-@expense.Id" class="hidden-xs pull-right" title="Edytuj wydatek">
+                                    <button type="button" class="btn-rounded btn-turquoise btn-edit-expense">
+                                        <span class="icon icon-lg icon-edit"></span>
+                                    </button>
+                                    <button type="button" class="btn-rounded btn-dismiss btn-remove-expense" title="Usuń wydatek">
+                                        <span class="icon icon-lg icon-trash"></span>
+                                    </button>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="list-item-handle" title="Przeciągnij wydatek"></div>
+                </div>
+            </li>
+        }
+    </ul>
+</div> 

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AIT.WebUIComponent.Models.Pdf.GroupByStatusModel>
+
+@{
+    ViewBag.Title = "Guests by status pdf";
+    Layout = "~/Views/Shared/_PdfLayout.cshtml";
+}
+
+<h2>
+    Osoby zaakceptowane
+</h2>
+@foreach (var group in Model)
+{
+    Html.RenderPartial("_Guests", group.PersonsAccepted, new ViewDataDictionary { { "GroupName", group.Name } });
+}
+
+<h2>
+    Osoby niepotwierdzone
+</h2>
+@foreach (var group in Model)
+{
+    Html.RenderPartial("_Guests", group.PersonsUnconfirmed, new ViewDataDictionary { { "GroupName", group.Name } });  
+}
+
+<h2>
+    Osoby odrzucone
+</h2> 
+@foreach (var group in Model)
+{        
+    Html.RenderPartial("_Guests", group.PersonsDeclined, new ViewDataDictionary { { "GroupName", group.Name } });
+}
+

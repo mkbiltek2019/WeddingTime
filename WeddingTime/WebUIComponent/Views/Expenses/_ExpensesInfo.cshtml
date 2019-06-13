@@ -1,0 +1,33 @@
+﻿@model AIT.WebUIComponent.Models.Expenses.ExpensesInfoModel
+
+<div class="col-xs-12 col-sm-4">
+    <div class="budget-text grey center">Budżet: </div>
+    <div class="budget-area">
+        <div id="displayBudgetArea">
+            <div class="budget-value" data-bind="budgetValue">
+                @* data-bind values must be equal to budgetModel items from budgetInfoManager js class *@
+                @Model.Budget.Value
+            </div>
+            <div class="budget-edit">
+                <button type="button" id="btnEditBudget" class="btn-rounded btn-turquoise" title="Edytuj budżet">
+                    <span class="icon icon-lg icon-edit"></span>
+                </button>
+            </div>
+        </div>
+        <div id="updateBudgetArea" class="budget-update">
+            @{ Html.RenderPartial("_UpdateBudget", Model.Budget); }
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-4">
+    <div class="budget-calc">
+        <div class="budget-text grey">Całkowite wydatki:</div>
+        <div class="budget-text pink value" data-bind="totalPrice">@Model.TotalPrice</div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-4">
+    <div class="budget-calc">
+        <div class="budget-text grey">Pozostały budżet:</div>
+        <div class="budget-text blue value" data-bind="budgetLeft">@Model.BudgetLeft</div>
+    </div>
+</div>

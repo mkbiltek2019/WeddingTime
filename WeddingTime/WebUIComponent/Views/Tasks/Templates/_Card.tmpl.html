@@ -1,0 +1,32 @@
+﻿<div class="card" cid="{{:Id}}">
+    <div class="card-right">
+        <div class="card-items-info">
+            {{if HasContactItems}}
+                <span class="card-icon contact"></span>
+            {{/if}}
+            {{if HasEmailItems}}
+                <span class="card-icon mail"></span>
+            {{/if}}
+            {{if HasAddressItems}}
+                <span class="card-icon address"></span>
+            {{/if}}
+            {{if HasPhoneItems}}
+                <span class="card-icon phone"></span>
+            {{/if}}
+            {{if HasLinkItems}}
+                <span class="card-icon link"></span>
+            {{/if}}
+        </div>
+        <button type="button" class="btn-rounded btn-small btn-dismiss btn-card-remove" title="Usuń kartę zadania">
+            <span class="icon icon-sm icon-trash"></span> 
+        </button>        
+    </div>
+    <div class="card-left">
+        <button type="button" class="btn-card" data-toggle="modal" data-task-id="{{:TaskId}}" data-card-id="{{:Id}}" data-target="#taskCardModal">
+            {{:Title}}
+        </button>
+    </div>
+
+    {{for #data tmpl="cardHidden" /}}
+
+</div>

@@ -1,0 +1,53 @@
+﻿@model AIT.WebUIComponent.Models.Account.ExternalLoginConfirmationViewModel
+
+@{
+    ViewBag.Title = " - dodanie konta";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div class="row">
+    <p class="form-text">
+        POWIĄŻ SWOJE KONTO
+    </p>
+    <hr class="separator" />
+</div>
+<div class="row">
+    <div class="text-center page-desc">
+        <p>
+            Zostałeś pomyślnie uwierzytelniony z konta <strong>@Model.LoginProvider</strong>.            
+        </p>
+        <p>
+            Witamy wsród zamiłowanych użytkowników!
+        </p>
+    </div>
+    <div class="form-panel">
+        <div class="form-header form-header-blue">
+            <div class="form-title">
+                Wprowadź nazwę użytkownika
+            </div>
+        </div>
+        <div class="form-body form-body-blue">
+            @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "exLoginForm", role = "form" }))
+            {
+                @Html.AntiForgeryToken()   
+                @Html.HiddenFor(n => n.LoginProvider)
+
+                <div class="form-inputs">
+                    <div class="form-ctrl-area">
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-ctrl", placeholder = "Nazwa użytkownika" })
+                    </div> 
+                    @Html.ValidationSummary(true)                   
+                </div>
+                <div class="form-body-btn">
+                    <button type="submit" class="btn-rounded btn-turquoise">
+                        <span class="icon icon-lg icon-register"></span>
+                    </button>
+                </div>                
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/enhance")
+}

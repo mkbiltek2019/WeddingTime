@@ -1,0 +1,1483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE0D33F2-7C3B-4B47-BCC1-934A36D608C1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIT.WebUIComponent</RootNamespace>
+    <AssemblyName>AIT.WebUIComponent</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.8\lib\itextsharp.xmlworker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=4.6.22.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.22\lib\net45\MvcSiteMapProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.4.6.22\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.7.7.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.7.7\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.1.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.3.1.2\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=3.1.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.3.1.2\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RazorGeneratorMvcStart.cs" />
+    <Compile Include="Attributes\CustomHandleErrorAttribute.cs" />
+    <Compile Include="AutoMapping\BallroomMap.cs" />
+    <Compile Include="AutoMapping\ExpenseMap.cs" />
+    <Compile Include="AutoMapping\GuestMap.cs" />
+    <Compile Include="AutoMapping\PdfMap.cs" />
+    <Compile Include="AutoMapping\TasksMap.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BallroomController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\ExpensesController.cs" />
+    <Compile Include="Controllers\GuestsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PdfController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\UndoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512301606359_InitialCreate.cs" />
+    <Compile Include="Migrations\201512301606359_InitialCreate.Designer.cs">
+      <DependentUpon>201512301606359_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601091626218_AddUserFields.cs" />
+    <Compile Include="Migrations\201601091626218_AddUserFields.Designer.cs">
+      <DependentUpon>201601091626218_AddUserFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601122019592_AddCreationAndLastLoggingDate.cs" />
+    <Compile Include="Migrations\201601122019592_AddCreationAndLastLoggingDate.Designer.cs">
+      <DependentUpon>201601122019592_AddCreationAndLastLoggingDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601141010328_InitTables.cs" />
+    <Compile Include="Migrations\201601141010328_InitTables.Designer.cs">
+      <DependentUpon>201601141010328_InitTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account\AccountViewModels.cs" />
+    <Compile Include="Models\Account\AutoLoginModel.cs" />
+    <Compile Include="Models\Account\IdentityModels.cs" />
+    <Compile Include="Models\Account\ManageViewModels.cs" />
+    <Compile Include="Models\Account\RegisterModel.cs" />
+    <Compile Include="Models\Account\SignInModel.cs" />
+    <Compile Include="Models\Ballroom\BallroomGroupModel.cs" />
+    <Compile Include="Models\Ballroom\BallroomItemModel.cs" />
+    <Compile Include="Models\Ballroom\BallroomModel.cs" />
+    <Compile Include="Models\Ballroom\PersonModel.cs" />
+    <Compile Include="Models\Ballroom\PillarRoundModel.cs" />
+    <Compile Include="Models\Ballroom\PillarRectModel.cs" />
+    <Compile Include="Models\Ballroom\RectSeatModel.cs" />
+    <Compile Include="Models\Ballroom\RoundSeatModel.cs" />
+    <Compile Include="Models\Ballroom\StageHalfCircleModel.cs" />
+    <Compile Include="Models\Ballroom\StageRectModel.cs" />
+    <Compile Include="Models\Ballroom\TableRoundModel.cs" />
+    <Compile Include="Models\Ballroom\ItemDeleteModel.cs" />
+    <Compile Include="Models\Ballroom\ItemToAddModel.cs" />
+    <Compile Include="Models\Ballroom\SeatModel.cs" />
+    <Compile Include="Models\Ballroom\TableRectModel.cs" />
+    <Compile Include="Models\Emails\MessageModel.cs" />
+    <Compile Include="Models\Emails\SystemMessage.cs" />
+    <Compile Include="Models\Emails\UserMessage.cs" />
+    <Compile Include="Models\Expenses\BudgetModel.cs" />
+    <Compile Include="Models\Expenses\ExpenseItemModel.cs" />
+    <Compile Include="Models\Expenses\ExpensesInfoModel.cs" />
+    <Compile Include="Models\Expenses\UpdateExpenseOrderNoModel.cs" />
+    <Compile Include="Models\Guests\UpdatePersonOrderNoModel.cs" />
+    <Compile Include="Models\Home\ContactModel.cs" />
+    <Compile Include="Models\Pdf\ExpenseItemModel.cs" />
+    <Compile Include="Models\Pdf\ExpensesModel.cs" />
+    <Compile Include="Models\Pdf\GroupByStatusModel.cs" />
+    <Compile Include="Models\Pdf\GroupModel.cs" />
+    <Compile Include="Models\Pdf\PersonModel.cs" />
+    <Compile Include="Models\Shared\Enums\UpdateOrderNoType.cs" />
+    <Compile Include="Models\Guests\GroupModel.cs" />
+    <Compile Include="Models\Guests\InnerGroupMemberModel.cs" />
+    <Compile Include="Models\Guests\MembersModel.cs" />
+    <Compile Include="Models\Guests\PersonModel.cs" />
+    <Compile Include="Models\Guests\PersonModificationModel.cs" />
+    <Compile Include="Models\Shared\UpdateOrderNoBaseModel.cs" />
+    <Compile Include="Models\Tasks\TaskCardItemModel.cs" />
+    <Compile Include="Models\Tasks\TaskCardModel.cs" />
+    <Compile Include="Models\Tasks\TaskModel.cs" />
+    <Compile Include="Models\Tasks\TaskInfoModel.cs" />
+    <Compile Include="Models\Undo\UndoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Emails\Templates\ConfirmAccountEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmAccountEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Emails\Templates\ConfirmChangedEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmChangedEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Emails\Templates\FeedbackEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Emails\Templates\ResetPasswordEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPasswordEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Confirm.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Confirm.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ConfirmNewEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfirmNewEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\EmailAlreadyConfirmed.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailAlreadyConfirmed.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\EmailConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ExternalLoginConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ExternalLoginFailure.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalLoginFailure.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ForgotPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ForgotPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForgotPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Login.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\Register.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Register.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ResetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ResetPasswordConfirmation.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResetPasswordConfirmation.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\_ExternalLoginsListPartial.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ExternalLoginsListPartial.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ballroom\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ballroom\_BallroomItems.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_BallroomItems.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\PrivacyAndCookiesPolicy.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrivacyAndCookiesPolicy.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documents\UserAgreement.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserAgreement.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\EditorTemplates\ExpenseItemModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseItemModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_CreateExpense.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CreateExpense.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_EditExpense.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EditExpense.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_EditExpenses.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EditExpenses.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_Expenses.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Expenses.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_ExpensesInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ExpensesInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Expenses\_UpdateBudget.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_UpdateBudget.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\EditorTemplates\PersonModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_CreateGroup.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CreateGroup.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_CreatePerson.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CreatePerson.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_EditGroup.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EditGroup.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_EditPersons.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EditPersons.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_Group.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Group.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_Groups.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Groups.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_MembersInfo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_MembersInfo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_Person.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Person.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guests\_PersonsList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PersonsList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Contact.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage\ChangeEmail.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangeEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage\ChangePassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangePassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage\ManageLogins.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageLogins.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Manage\SetPassword.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SetPassword.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pdf\ExpensesPdf.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpensesPdf.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pdf\GuestsByStatusPdf.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestsByStatusPdf.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pdf\GuestsPdf.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestsPdf.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pdf\_Guests.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Guests.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CanonicalHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\MenuHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetaRobotsHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapNodeModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapNodeModelList.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapPathHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SiteMapTitleHelperModel.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Error.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Error.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Layout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_LayoutSubPage.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LayoutSubPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Login.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Login.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_ModalAnimate.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ModalAnimate.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_PdfLayout.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_PdfLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\_Search.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Search.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tasks\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tasks\_CreateTask.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_CreateTask.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tasks\_Task.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Task.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tasks\_TaskCard.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_TaskCard.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tasks\_UpdateTask.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_UpdateTask.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Undo\_Undo.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Undo.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
+    </Compile>
+    <Content Include="Images\icons\send.png" />
+    <Content Include="Migrations\guide.txt" />
+    <Content Include="Mvc.sitemap" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\Libs\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\Libs\jquery-2.2.0.js" />
+    <Content Include="Scripts\Libs\jquery-2.2.0.min.js" />
+    <Content Include="Scripts\Libs\modernizr-2.8.3.js" />
+    <Content Include="Views\Ballroom\Templates\_MobileInfo.tmpl.html" />
+    <Content Include="Content\intro\introjs-dark.css" />
+    <Content Include="Content\intro\introjs-nassim.css" />
+    <Content Include="Content\intro\introjs-nazanin.css" />
+    <Content Include="Content\intro\introjs-royal.css" />
+    <Content Include="Content\intro\introjs-rtl.css" />
+    <Content Include="Content\intro\introjs-rtl.min.css" />
+    <Content Include="Content\intro\introjs.css" />
+    <Content Include="Content\intro\introjs.min.css" />
+    <Content Include="Scripts\Account\auto-login-init.js" />
+    <Content Include="Scripts\Account\auto-login.manager.js" />
+    <Content Include="Scripts\Account\login-init.js" />
+    <Compile Include="Services\AutoMapper\ITasksAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\TasksAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\BallroomAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\ExpenseAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\GuestAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\IBallroomAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\IExpenseAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\IGuestAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\IPdfAutoMapperService.cs" />
+    <Compile Include="Services\AutoMapper\PdfAutoMapperService.cs" />
+    <Compile Include="Services\Emails\DTO\MessageData.cs" />
+    <Compile Include="Services\Emails\EmailService.cs" />
+    <Compile Include="Services\Emails\Enum\EmailType.cs" />
+    <Compile Include="Services\Emails\IEmailService.cs" />
+    <Compile Include="Services\Tasks\ITaskCardItemsService.cs" />
+    <Compile Include="Services\Tasks\TaskCardItemsService.cs" />
+    <Compile Include="Services\Undo\DTO\Expenses\ExpenseUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Guests\GroupUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Guests\InnerGroupMemberUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Guests\InnerGroupUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Guests\PersonUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Tasks\TaskCardItemUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Tasks\TaskCardUndo.cs" />
+    <Compile Include="Services\Undo\DTO\Tasks\TaskUndo.cs" />
+    <Compile Include="Services\Undo\Enums\UndoAction.cs" />
+    <Compile Include="Services\Undo\IUndoCommandService.cs" />
+    <Compile Include="Services\Undo\Strategies\ExpensesUndoStrategy.cs" />
+    <Compile Include="Services\Undo\Strategies\GroupUndoStrategy.cs" />
+    <Compile Include="Services\Undo\Strategies\GuestsUndoStrategyBase.cs" />
+    <Compile Include="Services\Undo\Strategies\PersonsUndoStrategy.cs" />
+    <Compile Include="Services\Undo\Strategies\TaskUndoStrategy.cs" />
+    <Compile Include="Services\Undo\Strategies\UndoStrategyBase.cs" />
+    <Compile Include="Services\Undo\UndoCommandService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="UndoCommands\DeleteExpensesUndoCommand.cs" />
+    <Compile Include="UndoCommands\DeleteGroupUndoCommand.cs" />
+    <Compile Include="UndoCommands\DeletePersonsUndoCommand.cs" />
+    <Compile Include="UndoCommands\DeleteTaskUndoCommand.cs" />
+    <Compile Include="CustomModelBinders\BallroomItemModelBinder.cs" />
+    <Compile Include="Utilities\UnicodeFontFactory.cs" />
+    <Compile Include="Utilities\UnityDependencyResolver.cs" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapNodeModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MenuHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapTitleHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapPathHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapNodeModelList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SiteMapHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>MetaRobotsHelperModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>CanonicalHelperModel.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\clouds_left.png" />
+    <Content Include="Images\clouds_right.png" />
+    <Content Include="Images\external\facebook.png" />
+    <Content Include="Images\external\facebook_act.png" />
+    <Content Include="Images\external\google.png" />
+    <Content Include="Images\external\google_act.png" />
+    <Content Include="Images\external\microsoft.png" />
+    <Content Include="Images\external\microsoft_act.png" />
+    <Content Include="Images\external\twitter.png" />
+    <Content Include="Images\external\twitter_act.png" />
+    <Content Include="Images\icons\add.png" />
+    <Content Include="Images\icons\arrow_down_g.png" />
+    <Content Include="Images\icons\arrow_down_r.png" />
+    <Content Include="Images\icons\arrow_left_g.png" />
+    <Content Include="Images\icons\arrow_left_r.png" />
+    <Content Include="Images\icons\arrow_right_g.png" />
+    <Content Include="Images\icons\arrow_right_r.png" />
+    <Content Include="Images\icons\arrow_up_g.png" />
+    <Content Include="Images\icons\arrow_up_r.png" />
+    <Content Include="Images\icons\calendar.png" />
+    <Content Include="Images\icons\cancel.png" />
+    <Content Include="Images\icons\chain.png" />
+    <Content Include="Images\icons\coins.png" />
+    <Content Include="Images\icons\collapse.png" />
+    <Content Include="Images\icons\confirmed.png" />
+    <Content Include="Images\icons\contact.png" />
+    <Content Include="Images\icons\contact_xs.png" />
+    <Content Include="Images\icons\edit.png" />
+    <Content Include="Images\icons\expand.png" />
+    <Content Include="Images\icons\expand_hor.png" />
+    <Content Include="Images\icons\expand_vrt.png" />
+    <Content Include="Images\icons\fb.png" />
+    <Content Include="Images\icons\gp.png" />
+    <Content Include="Images\icons\guests.png" />
+    <Content Include="Images\icons\hide.png" />
+    <Content Include="Images\icons\home.png" />
+    <Content Include="Images\icons\home_xs.png" />
+    <Content Include="Images\icons\items.png" />
+    <Content Include="Images\icons\left.png" />
+    <Content Include="Images\icons\link.png" />
+    <Content Include="Images\icons\link_xs.png" />
+    <Content Include="Images\icons\mail.png" />
+    <Content Include="Images\icons\mail_xs.png" />
+    <Content Include="Images\icons\move.png" />
+    <Content Include="Images\icons\narrow_hor.png" />
+    <Content Include="Images\icons\narrow_vrt.png" />
+    <Content Include="Images\icons\pdf.png" />
+    <Content Include="Images\icons\person.png" />
+    <Content Include="Images\icons\phone.png" />
+    <Content Include="Images\icons\phone_xs.png" />
+    <Content Include="Images\icons\pillar.png" />
+    <Content Include="Images\icons\pillar_rect.png" />
+    <Content Include="Images\icons\pillar_round.png" />
+    <Content Include="Images\icons\register.png" />
+    <Content Include="Images\icons\remove.png" />
+    <Content Include="Images\icons\right.png" />
+    <Content Include="Images\icons\enter.png" />
+    <Content Include="Images\icons\ring.png" />
+    <Content Include="Images\icons\rotate.png" />
+    <Content Include="Images\icons\save.png" />
+    <Content Include="Images\icons\scene.png" />
+    <Content Include="Images\icons\search.png" />
+    <Content Include="Images\icons\stage_rect.png" />
+    <Content Include="Images\icons\stage_round.png" />
+    <Content Include="Images\icons\tab_rect.png" />
+    <Content Include="Images\icons\tab_round.png" />
+    <Content Include="Images\icons\trash.png" />
+    <Content Include="Images\icons\tw.png" />
+    <Content Include="Images\icons\unchain.png" />
+    <Content Include="Images\icons\unconfirmed.png" />
+    <Content Include="Images\icons\undo.png" />
+    <Content Include="Images\icons\unwind.png" />
+    <Content Include="Images\icons\user.png" />
+    <Content Include="Images\icons\wallet.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\main\backlight_bottom.png" />
+    <Content Include="Images\main\backlight_top.png" />
+    <Content Include="Images\main\ballroom_xs.png" />
+    <Content Include="Images\chair.png" />
+    <Content Include="Images\main\expenses_xs.png" />
+    <Content Include="Images\main\guests_xs.png" />
+    <Content Include="Images\hearts_bottom.png" />
+    <Content Include="Images\main\hearts_top.png" />
+    <Content Include="Images\main\main_xs.png" />
+    <Content Include="Images\menu\xs.png" />
+    <Content Include="Images\menu\xs_active.png" />
+    <Content Include="Images\menu\heart.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\main\main.png" />
+    <Content Include="Images\main\main_back.png" />
+    <Content Include="Images\shared\noise.png" />
+    <Content Include="Images\rotate.png" />
+    <Content Include="Images\main\tasks_xs.png" />
+    <Content Include="Images\sub_img.png" />
+    <Content Include="Scripts\Account\register-init.js" />
+    <Content Include="Scripts\Account\register.manager.js" />
+    <Content Include="Scripts\Ballroom\ballroom-intro.js" />
+    <Content Include="Scripts\Ballroom\ballroom-item.factory.js" />
+    <Content Include="Scripts\Ballroom\ballroom.enums.js" />
+    <Content Include="Scripts\Ballroom\ballroom.manager.js" />
+    <Content Include="Scripts\Ballroom\ballroom.service.js" />
+    <Content Include="Scripts\Ballroom\ballroom-seat.factory.js" />
+    <Content Include="Scripts\Ballroom\init.js" />
+    <Content Include="Scripts\Ballroom\seat-utils.js" />
+    <Content Include="Scripts\Ballroom\seats-rect.service.js" />
+    <Content Include="Scripts\Ballroom\seats-round.service.js" />
+    <Content Include="Scripts\Ballroom\seats.service.base.js" />
+    <Content Include="Scripts\Expenses\budget-info.manager.js" />
+    <Content Include="Scripts\Expenses\init.js" />
+    <Content Include="Scripts\Guests\init.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-englebert-regular.ttf" />
+    <Content Include="Scripts\Account\login.manager.js" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Content Include="Content\regulations\odstapienie_od_umowy.pdf" />
+    <Content Include="Content\regulations\regulamin.pdf" />
+    <Content Include="Content\regulations\polityka_prywatnosci_i_plikow_cookies.pdf" />
+    <Content Include="Scripts\Libs\jquery-2.2.0.min.map" />
+    <Content Include="Scripts\Libs\intro.js" />
+    <Content Include="Scripts\Libs\intro.min.js" />
+    <Content Include="Scripts\Libs\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\Libs\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\Libs\detect-mobile.js" />
+    <Content Include="Scripts\Libs\jquery.countdown360.js" />
+    <Content Include="Scripts\Libs\jquery.stick-to-top.js" />
+    <Content Include="Scripts\Libs\jquery.cookie.js" />
+    <None Include="Scripts\Libs\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Shared\cookie.manager.js" />
+    <Content Include="Scripts\Utils\countdown.manager.js" />
+    <Content Include="Scripts\Shared\non-ajax-form.init.js" />
+    <Content Include="Scripts\Shared\ui.manager.js" />
+    <Content Include="Scripts\Shared\init.js" />
+    <Content Include="Scripts\Shared\shared.manager.js" />
+    <Content Include="Scripts\Tasks\init.js" />
+    <Content Include="Scripts\Utils\dialog.animation.js" />
+    <Content Include="Scripts\Expenses\expenses.manager.js" />
+    <Content Include="Scripts\Expenses\expenses.service.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\Expenses\filter.manager.js" />
+    <Content Include="Scripts\Guests\members-info.manager.js" />
+    <Content Include="Scripts\Guests\sticky-items.manager.js" />
+    <Content Include="Scripts\Guests\filter.manager.js" />
+    <Content Include="Scripts\Guests\group.manager.js" />
+    <Content Include="Scripts\Guests\guests.service.js" />
+    <Content Include="Scripts\Guests\person.manager.js" />
+    <Content Include="Scripts\Libs\bootstrap.js" />
+    <Content Include="Scripts\Libs\bootstrap.min.js" />
+    <Content Include="Scripts\Libs\jquery.block-ui.js" />
+    <Content Include="Scripts\Libs\jquery.form-listener.js" />
+    <Content Include="Scripts\Libs\jquery.stick-to-bottom.js" />
+    <Content Include="Scripts\Libs\jquery.ui.touch-punch.js" />
+    <Content Include="Scripts\Libs\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\Libs\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\Libs\jquery.validate.js" />
+    <Content Include="Scripts\Libs\jquery.validate.min.js" />
+    <Content Include="Scripts\Libs\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Libs\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Libs\jsrender.js" />
+    <Content Include="Scripts\Tasks\card.manager.js" />
+    <Content Include="Scripts\Tasks\sync.manager.js" />
+    <Content Include="Scripts\Tasks\tasks.manager.js" />
+    <Content Include="Scripts\Tasks\tasks.service.js" />
+    <Content Include="Scripts\Utils\ajax-utils.js" />
+    <Content Include="Scripts\Utils\requiredif-validation.js" />
+    <Content Include="Scripts\Utils\error-utils.js" />
+    <Content Include="Scripts\Utils\form-utils.js" />
+    <Content Include="Scripts\Utils\tmpl-utils.js" />
+    <Content Include="Scripts\Utils\undo-ui.manager.js" />
+    <Content Include="Scripts\Utils\undo-utils.js" />
+    <Content Include="Scripts\Libs\unobtrusive-ext.js" />
+    <Content Include="Scripts\Utils\utilities.js" />
+    <Content Include="Views\Ballroom\Templates\_BallroomItem.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_PillarRound.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_PillarRect.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_StageHalfCircle.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_StagePanelBtns.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_StageRect.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_TableRect.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_TableRectPanelBtns.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_TableRound.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_PersonList.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_PersonName.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_Seat.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_SeatRound.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_SeatsRow.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_SeatUtmost.tmpl.html" />
+    <Content Include="Views\Ballroom\Templates\_TableRoundPanelBtns.tmpl.html" />
+    <Content Include="Views\Shared\Templates\_AjaxError.tmpl.html" />
+    <Content Include="Views\Shared\Templates\_CookieInfo.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_AddressItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_CardHidden.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_CardItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_ContactPersonItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_LinkItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_CardItemHidden.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_PhoneItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_EmailItem.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_Task.tmpl.html" />
+    <Content Include="Views\Tasks\Templates\_Card.tmpl.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ExternalLoginsListPartial.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExternalLoginConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExternalLoginFailure.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\Login.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Login.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\Register.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Register.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\EditorTemplates\PersonModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PersonModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_CreateGroup.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CreateGroup.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_CreatePerson.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CreatePerson.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_Person.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Person.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_PersonsList.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PersonsList.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_EditGroup.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EditGroup.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_EditPersons.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EditPersons.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Contact.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Contact.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Layout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Error.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Undo\_Undo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Undo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_Expenses.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Expenses.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_CreateExpense.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CreateExpense.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_EditExpenses.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EditExpenses.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\EditorTemplates\ExpenseItemModel.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExpenseItemModel.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_UpdateBudget.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_UpdateBudget.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Ballroom\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Ballroom\_BallroomItems.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_BallroomItems.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_Groups.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Groups.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_ModalAnimate.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ModalAnimate.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_MembersInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_MembersInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Pdf\GuestsPdf.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GuestsPdf.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Pdf\GuestsByStatusPdf.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>GuestsByStatusPdf.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_PdfLayout.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_PdfLayout.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Pdf\_Guests.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Guests.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Login.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Login.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_ExpensesInfo.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ExpensesInfo.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Expenses\_EditExpense.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_EditExpense.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Pdf\ExpensesPdf.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ExpensesPdf.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_Search.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Search.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Tasks\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Tasks\_Task.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Task.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Tasks\_CreateTask.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_CreateTask.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Tasks\_UpdateTask.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_UpdateTask.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Tasks\_TaskCard.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_TaskCard.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Guests\_Group.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Group.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Shared\_LayoutSubPage.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_LayoutSubPage.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\Confirm.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Confirm.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ForgotPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ResetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPasswordConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\EmailConfirmation.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmailConfirmation.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Manage\ChangePassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ChangePassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Manage\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Manage\ManageLogins.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ManageLogins.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Manage\SetPassword.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SetPassword.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Manage\ChangeEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ChangeEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\ConfirmNewEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmNewEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Account\EmailAlreadyConfirmed.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>EmailAlreadyConfirmed.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Services\Emails\Templates\ConfirmAccountEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmAccountEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Services\Emails\Templates\ResetPasswordEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ResetPasswordEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Services\Emails\Templates\ConfirmChangedEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ConfirmChangedEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Services\Emails\Templates\FeedbackEmail.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>FeedbackEmail.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Documents\UserAgreement.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>UserAgreement.generated.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Documents\PrivacyAndCookiesPolicy.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>PrivacyAndCookiesPolicy.generated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domains\BallroomDomain.Model\BallroomDomain.Model.csproj">
+      <Project>{2bf57e77-a17b-42a7-9403-febc0ef825e6}</Project>
+      <Name>BallroomDomain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\BallroomDomain.Services\BallroomDomain.Services.csproj">
+      <Project>{4cbcd476-56a5-4aad-b480-82f48230b6d8}</Project>
+      <Name>BallroomDomain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\GuestDomain.Model\GuestDomain.Model.csproj">
+      <Project>{5b0bb791-6c7d-49b5-ae75-4937ab669742}</Project>
+      <Name>GuestDomain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\GuestDomain.Services\GuestDomain.Services.csproj">
+      <Project>{8fef896c-50f8-4850-a140-1845e65b1adb}</Project>
+      <Name>GuestDomain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\TaksDomain.Infrastructure\TaksDomain.Infrastructure.csproj">
+      <Project>{f1a913ea-c6fe-4fe7-bf91-6cef83315149}</Project>
+      <Name>TaksDomain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\TaskDomain.Model\TaskDomain.Model.csproj">
+      <Project>{1a4e8f77-d163-4f40-b311-17b37d2a67f8}</Project>
+      <Name>TaskDomain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domains\TaskDomain.Services\TaskDomain.Services.csproj">
+      <Project>{abb2aa78-3d08-4cdb-95ba-f1bc7e978cd3}</Project>
+      <Name>TaskDomain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ExpenseManagement\ExpenseManagement.Model\ExpenseManagement.Model.csproj">
+      <Project>{b1ccc29d-7aaf-4e2d-a8ec-06d2d2968fce}</Project>
+      <Name>ExpenseManagement.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ExpenseManagement\ExpenseManagement.Services\ExpenseManagement.Services.csproj">
+      <Project>{352751a9-db9a-471e-89cc-b04d6611aa78}</Project>
+      <Name>ExpenseManagement.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UndoManagement\UndoManagement.Infrastructure\UndoManagement.Infrastructure.csproj">
+      <Project>{0276821f-b416-4690-bcdd-1d84ffa2de34}</Project>
+      <Name>UndoManagement.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UndoManagement\UndoManagement.Model\UndoManagement.Model.csproj">
+      <Project>{553e5a0c-c5d2-41e9-a880-7411c39a2d67}</Project>
+      <Name>UndoManagement.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UndoManagement\UndoManagement.Services\UndoManagement.Services.csproj">
+      <Project>{8b2b21c0-a745-400a-885f-8a9b1a223361}</Project>
+      <Name>UndoManagement.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\UtilitiesComponents\UtilitiesComponents.csproj">
+      <Project>{1fdb5d04-8647-4595-b5fc-d11795e2f4ec}</Project>
+      <Name>UtilitiesComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\WebUtilities\WebUtilities.csproj">
+      <Project>{d8a318ed-5789-4047-a9e6-2d685fedd2ac}</Project>
+      <Name>WebUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512301606359_InitialCreate.resx">
+      <DependentUpon>201512301606359_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601091626218_AddUserFields.resx">
+      <DependentUpon>201601091626218_AddUserFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601122019592_AddCreationAndLastLoggingDate.resx">
+      <DependentUpon>201601122019592_AddCreationAndLastLoggingDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601141010328_InitTables.resx">
+      <DependentUpon>201601141010328_InitTables.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>9999</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

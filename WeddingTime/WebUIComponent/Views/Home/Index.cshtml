@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = ".pl";
+}
+<div class="main-content">
+    <div class="home-content">
+        <div class="container">
+            <div class="col-sm-offset-1 col-sm-3">
+                <div class="guests-container">
+                    <div>
+                        <div class="text-heart text-heart-gu-top">
+                            @Html.ActionLink("LISTA", "Index", "Guests")
+                        </div>
+                        <div class="text-heart text-heart-gu-btm">
+                            @Html.ActionLink("GOŚCI", "Index", "Guests")
+                        </div>
+                    </div>
+                    <div class="visible-xs">
+                        <p class="text-welcome text-guests">
+                            Uporządkowana i przejrzysta lista gości z możliwością bieżącej aktualizacji i wygodnym eksportem do pliku PDF jest łatwo i szybko dostępna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="expenses-container">
+                    <div>
+                        <div class="text-heart text-heart-ex">
+                            @Html.ActionLink("WYDATKI", "Index", "Expenses")
+                        </div>
+                    </div>
+                    <div class="visible-xs">
+                        <p class="text-welcome text-expenses">
+                            Planowanie niezbędnych wydatków oraz bieżąca kontrola poniesionych kosztów i założonego budżetu nigdy nie była tak prosta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="tasks-container">
+                    <div>
+                        <div class="text-heart text-heart-ts">
+                            @Html.ActionLink("ZADANIA", "Index", "Tasks")
+                        </div>
+                    </div>
+                    <div class="visible-xs">
+                        <p class="text-welcome text-tasks">
+                            Utworzenie listy spraw i zadań, przypisanie im terminu wykonania oraz nadanie statusu realizacji nie jest już skomplikowane.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="ballroom-container">
+                    <div>
+                        <div class="text-heart text-heart-bl text-heart-bl-top">
+                            @Html.ActionLink("SALA", "Index", "Ballroom")
+                        </div>
+                        <div class="text-heart text-heart-bl text-heart-bl-btm">
+                            @Html.ActionLink("WESELNA", "Index", "Ballroom")
+                        </div>
+                    </div>
+                    <div class="visible-xs">
+                        <p class="text-welcome text-ballroom">
+                            Odpowiednie ułożenie stołów na sali weselnej i wybranie idealnych miejsc dla poszczególnych gości nie jest już problemem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="welcome-container">
+            <div class="welcome-header">
+                WITAMY SERDECZNIE!
+            </div>
+            <div class="welcome-body">
+                Organizując własne wesele, poszukiwaliśmy nowoczesnego narzędzia, które pozwoliłoby nam zapanować nad listą gości, zadaniami do wykonania, wydatkami czy salą weselną. Bezskutecznie. Postanowiliśmy więc stworzyć własne – tak powstał serwis Zamiłowani.pl.
+            </div>
+        </div>
+    </div>
+</div>

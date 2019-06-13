@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = " - wydatki";
+    Layout = "~/Views/Shared/_LayoutSubPage.cshtml";
+}
+
+<div id="expensesContainer">
+    <div class="row">
+        @{ Html.RenderPartial("_Search"); }
+    </div>
+    <div class="row">
+        <div id="expensesInfo">
+            @* injected by ajax call *@
+        </div>
+        <hr class="separator" />
+
+        <div class="expense-actions">
+            <button type="button" data-toggle="modal" data-target="#createExpensesModal" class="btn-simple wide">
+                DODAJ WYDATKI
+            </button>
+
+            @Html.ActionLink("EKSPORTUJ WYDATKI", "ExpensesPdf", "Pdf", null, new { id = "btnExpensesExport", @class = "btn-simple wide", target = "_blank" })
+        </div>
+    </div>
+    <div class="row expenses-area">
+        <div class="relative-position">
+            <div class="sticky-top-wrapper">
+                <div id="expensesHeader" class="expenses-header">
+                    <div class="col-xs-10 col-sm-6 text-center">Nazwa/Opis</div>
+                    <div class="hidden-xs col-sm-1">Ilość</div>
+                    <div class="hidden-xs col-sm-2">Cena jedn.</div>
+                    <div class="col-xs-2">Wartość</div>
+                </div>
+            </div>
+            <div class="relative-position">
+                <div id="expenses">
+                    @* injected by ajax call *@
+                </div>
+                <div id="expensesPanel" class="stick-bottom-panel">                    
+                    <button type="button" data-toggle="modal" data-target="#editExpensesModal" class="btn-rounded btn-turquoise" title="Edytuj zaznaczone wydatki">
+                        <span class="icon icon-lg icon-edit"></span>
+                    </button>
+                    <button type="button" id="btnSumupExpenses" class="btn-rounded btn-turquoise"
+                            data-toggle="popover"
+                            data-placement="top"
+                            data-container="#expensesPanel"
+                            data-trigger="manual"
+                            title="Podlicz zaznaczone wydatki">
+                        <span class="icon icon-lg icon-wallet"></span>
+                    </button>
+                    <button type="button" id="btnExpensesToPdf" class="btn-rounded btn-turquoise" title="Eksportuj zaznaczone wydatki do pliku PDF">
+                        <span class="icon icon-lg icon-pdf"></span>
+                    </button>
+                    <button id="btnDeleteExpenses" type="button" class="btn-rounded btn-dismiss" title="Usuń zaznaczone wydatki">
+                        <span class="icon icon-lg icon-trash"></span>
+                    </button>
+                    <button id="btnClearSelected" type="button" class="btn-rounded btn-dismiss" title="Zamknij panel">
+                        <span class="icon icon-lg icon-hide"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @{
+        Html.RenderPartial("_ModalAnimate", new ViewDataDictionary { { "Action", "CreateExpenses" }, { "Controller", "Expenses" }, { "Id", "createExpensesModal" }, { "Desc", "DODAJ WYDATKI" } });
+        Html.RenderPartial("_ModalAnimate", new ViewDataDictionary { { "Action", "UpdateExpenses" }, { "Controller", "Expenses" }, { "Id", "editExpensesModal" }, { "Desc", "EDYTUJ WYDATKI" } });
+    }
+</div>
+<div id="undoArea">
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/expenses")
+}

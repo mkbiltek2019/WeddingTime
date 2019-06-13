@@ -1,0 +1,31 @@
+﻿@model AIT.WebUIComponent.Models.Emails.UserMessage
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .pre-style {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="cid:@Model.ContentId" />
+    </p>
+    <p>
+        Wiadomość od @Model.Name.
+    </p>
+    <p>
+        Wprowadzony adres e-mail: @Model.Email
+    </p>
+    <p>
+        Treść:
+    </p>
+    <pre class="pre-style">
+        @Model.Body
+    </pre>
+</body>
+</html>  
